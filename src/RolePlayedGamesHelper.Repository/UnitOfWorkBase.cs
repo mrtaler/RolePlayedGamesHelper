@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using BoardGameHelper.Repository.SharpRepository.Interfaces;
-using BoardGameHelper.Repository.SharpRepository.Interfaces.Repository;
+using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
+using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces.Repository;
 
-namespace BoardGameHelper.Repository
+namespace RolePlayedGamesHelper.Repository
 {
     public abstract class UnitOfWorkBase<TContext, TDataContextFactory> :
         IUnitOfWork<TContext, TDataContextFactory>
