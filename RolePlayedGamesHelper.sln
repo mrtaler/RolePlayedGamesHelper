@@ -35,7 +35,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{
 		SemanticVersioning\template.hbs = SemanticVersioning\template.hbs
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{C32981A9-AB77-4343-A6CB-DAC109ED4E6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Repository", "src\RolePlayedGamesHelper.Repository\RolePlayedGamesHelper.Repository.csproj", "{E829FBF9-38E5-4BAD-861C-65A282886878}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E829FBF9-38E5-4BAD-861C-65A282886878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E829FBF9-38E5-4BAD-861C-65A282886878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E829FBF9-38E5-4BAD-861C-65A282886878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E829FBF9-38E5-4BAD-861C-65A282886878}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
@@ -43,6 +57,7 @@ Global
 		{96CAB3FB-430A-4F96-854E-DFBF10B28ECF} = {E2590C73-0AD4-4F0A-B944-28812AAE5388}
 		{92C80185-8837-4FFF-94B9-FAB9329C324F} = {E2590C73-0AD4-4F0A-B944-28812AAE5388}
 		{2831C909-786A-42A7-94E8-FCE9D7AFFDC5} = {92C80185-8837-4FFF-94B9-FAB9329C324F}
+		{E829FBF9-38E5-4BAD-861C-65A282886878} = {C32981A9-AB77-4343-A6CB-DAC109ED4E6F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00F53228-D583-4063-881D-E60E058EDABC}
