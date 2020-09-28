@@ -42,14 +42,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mrtaler/BoardGameHelper"
+    "url": "https://github.com/mrtaler/RolePlayedGamesHelper"
   },
   "author": "Siarhei linkevich",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mrtaler/BoardGameHelper"
+    "url": "https://github.com/mrtaler/RolePlayedGamesHelper"
   },
-  "homepage": "https://github.com/mrtaler/BoardGameHelper#readme",
+  "homepage": "https://github.com/mrtaler/RolePlayedGamesHelper#readme",
   "publishConfig": {
     "access": "restricted"
   }
