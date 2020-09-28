@@ -1,0 +1,56 @@
+{
+  "name": "board-game-assistant",
+  "version": "1.0.0",
+  "description": "xyi pizda and Jigurda",
+  "dependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.0.7",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "semantic-release": "^17.1.1",
+    "semantic-release-cli": "^5.4.0"
+  },
+  "devDependencies": {
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "^3.2.0"
+  },
+  "files": [
+    "release.config.js"
+  ],
+  "keywords": [
+    "changelog",
+    "git",
+    "github-package-registry",
+    "github-publish",
+    "github",
+    "publish",
+    "releaserc",
+    "release",
+    "semantic-release-config",
+    "semantic-release",
+    ".releaserc.json",
+    "release.config.js"
+  ],
+  "main": "release.config.js",
+  "peerDependencies": {
+    "semantic-release": ">=17.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrtaler/BoardGameHelper"
+  },
+  "author": "Siarhei linkevich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrtaler/BoardGameHelper"
+  },
+  "homepage": "https://github.com/mrtaler/BoardGameHelper#readme",
+  "publishConfig": {
+    "access": "restricted"
+  }
+}
