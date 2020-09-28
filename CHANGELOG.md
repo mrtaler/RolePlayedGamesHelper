@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.1](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.0.0...v1.1.0-release-candidate.1) (2020-09-28)
+
+
+        ### Features
+
+* initial commit for dev branch ([a8ad6e2](https://github.com/mrtaler/RolePlayedGamesHelper/commit/a8ad6e23824f6309848a9ca24d8b7f5c88f71631))
+
 # 1.0.0 (2020-09-28)
 
 
