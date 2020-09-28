@@ -23,7 +23,6 @@ jobs:
         uses: allenevans/set-env@v1.0.0
         with:
           overwrite: true
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
           GITHUB_TOKEN: ${{secrets.GIT_ARTIFACT_TOKEN}}
       - name: Setup Node.js
         uses: actions/setup-node@v1
