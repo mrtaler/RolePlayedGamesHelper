@@ -25,6 +25,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SemanticVersioning", "Seman
 		release.config.js = release.config.js
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{2831C909-786A-42A7-94E8-FCE9D7AFFDC5}"
+	ProjectSection(SolutionItems) = preProject
+		SemanticVersioning\commit.hbs = SemanticVersioning\commit.hbs
+		SemanticVersioning\footer.hbs = SemanticVersioning\footer.hbs
+		SemanticVersioning\header.hbs = SemanticVersioning\header.hbs
+		SemanticVersioning\parserOpts.js = SemanticVersioning\parserOpts.js
+		SemanticVersioning\release-rules.js = SemanticVersioning\release-rules.js
+		SemanticVersioning\template.hbs = SemanticVersioning\template.hbs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{96CAB3FB-430A-4F96-854E-DFBF10B28ECF} = {E2590C73-0AD4-4F0A-B944-28812AAE5388}
 		{92C80185-8837-4FFF-94B9-FAB9329C324F} = {E2590C73-0AD4-4F0A-B944-28812AAE5388}
+		{2831C909-786A-42A7-94E8-FCE9D7AFFDC5} = {92C80185-8837-4FFF-94B9-FAB9329C324F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00F53228-D583-4063-881D-E60E058EDABC}
