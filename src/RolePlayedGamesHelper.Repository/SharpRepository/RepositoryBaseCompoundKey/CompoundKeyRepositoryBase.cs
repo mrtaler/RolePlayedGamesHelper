@@ -20,7 +20,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoun
     {
         private TContext dataContext;
         protected IDataContextFactory<TContext> DataContextFactory { get; private protected set; }
-        protected TContext DataContext => dataContext ?? (dataContext = DataContextFactory.GetContext());
+        protected TContext DataContext => dataContext ??= DataContextFactory.GetContext();
 
         // the caching strategy used
         private ICompoundKeyCachingStrategy<T> _cachingStrategy;
@@ -481,7 +481,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoun
     {
         private TContext dataContext;
         protected IDataContextFactory<TContext> DataContextFactory { get; private protected set; }
-        protected TContext DataContext => dataContext ?? (dataContext = DataContextFactory.GetContext());
+        protected TContext DataContext => dataContext ??= DataContextFactory.GetContext();
 
         // the caching strategy used
         private ICompoundKeyCachingStrategy<T, TKey, TKey2> _cachingStrategy;
@@ -954,7 +954,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoun
     {
         private TContext dataContext;
         protected IDataContextFactory<TContext> DataContextFactory { get; private protected set; }
-        protected TContext DataContext => dataContext ?? (dataContext = DataContextFactory.GetContext());
+        protected TContext DataContext => dataContext ??= DataContextFactory.GetContext();
         // the caching strategy used
         private ICompoundKeyCachingStrategy<T, TKey, TKey2, TKey3> _cachingStrategy;
 

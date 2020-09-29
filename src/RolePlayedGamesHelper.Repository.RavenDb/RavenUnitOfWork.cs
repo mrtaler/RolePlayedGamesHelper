@@ -1,36 +1,60 @@
 ﻿using System;
+using Autofac;
+using Raven.Client.Documents.Session;
 using RolePlayedGamesHelper.Repository.RavenDb.Interfaces;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
 namespace RolePlayedGamesHelper.Repository.RavenDb
 {
     //  public abstract class UnitOfWorkBase<TContext>
-    public partial class RavenUnitOfWork<TContext>
-        : UnitOfWorkBase<TContext>, IUnitOfWork, IDisposable
-        where TContext : class, IRavenContext, IDisposable
+    public partial class RavenUnitOfWork
+        : UnitOfWorkBase<IDocumentSession, IDataContextFactory<IDocumentSession>>
     {
-
-        protected RavenUnitOfWork(IDataContextFactory<TContext> dataContextFactory)
-            : base(dataContextFactory)
+        private ILifetimeScope scope;
+        public RavenUnitOfWork(IContainer container, IDataContextFactory<IDocumentSession> dataContextFactory)
         {
+            scope = container.BeginLifetimeScope();
+            DataContextFactory = dataContextFactory;
         }
 
-        public void Dispose()
+        private bool _isDisposed;
+
+        /// <inheritdoc />
+        public override IDataContextFactory<IDocumentSession> DataContextFactory { get; }
+
+        /// <inheritdoc />
+        protected override IRepositoryFactory CreateRepositoryFactory()
         {
-            DataContext?.Dispose();
+            return scope.Resolve<IRepositoryFactory>();
         }
 
+        /// <inheritdoc />
         public override int? SaveChanges()
         {
-            try
+            throw new NotImplementedException();
+        }
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        private void Dispose(bool disposing)
+        {
+            if (_isDisposed)
+                return;
+
+            if (disposing)
             {
-                DataContext?.SaveChanges();
-                return 1;
+                //ContextSource.Client.;
             }
-            catch 
-            {
-                return null;
-            }
+            // Free any unmanaged objects here.
+            //
+            _isDisposed = true;
+        }
+
+        ~RavenUnitOfWork()
+        {
+            Dispose(false);
         }
     }
 }
