@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBase
 {
-    public abstract partial class RepositoryBase<T, TKey, TContext>
+    public abstract partial class RepositoryBase<T, TKey>
     { // This is the actual implementation that the derived class needs to implement
         protected abstract void AddItem(T entity);
 

@@ -10,9 +10,8 @@ using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
 namespace RolePlayedGamesHelper.Repository.Xml
 {
-    public abstract class XmlRepositoryBase<T, TKey, TContext> : LinqRepositoryBase<T, TKey, TContext> 
+    public abstract class XmlRepositoryBase<T, TKey> : LinqRepositoryBase<T, TKey> 
         where T : class, new()
-        where TContext : class, IDisposable
     {
         private List<T> _items = new List<T>();
         private string _storagePath;
@@ -23,8 +22,7 @@ namespace RolePlayedGamesHelper.Repository.Xml
         /// <param name="storagePath">Path to the directory.  The XML filename is determined by the TypeName</param>
         /// <param name="cachingStrategy"></param>
         internal XmlRepositoryBase(
-            IDataContextFactory<TContext> dataContextFactory,
-            ICachingStrategy<T, TKey>                      cachingStrategy = null) : base(dataContextFactory, cachingStrategy) 
+            ICachingStrategy<T, TKey>                      cachingStrategy = null) : base( cachingStrategy) 
         {
             Initialize();
         }

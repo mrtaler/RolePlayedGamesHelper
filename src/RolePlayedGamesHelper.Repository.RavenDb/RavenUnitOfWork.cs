@@ -8,10 +8,10 @@ namespace RolePlayedGamesHelper.Repository.RavenDb
 {
     //  public abstract class UnitOfWorkBase<TContext>
     public partial class RavenUnitOfWork
-        : UnitOfWorkBase<IDocumentSession, IDataContextFactory<IDocumentSession>>
+        : UnitOfWorkBase<IDocumentSession, RavenDbContextFactory>
     {
         private ILifetimeScope scope;
-        public RavenUnitOfWork(IContainer container, IDataContextFactory<IDocumentSession> dataContextFactory)
+        public RavenUnitOfWork(ILifetimeScope container, RavenDbContextFactory dataContextFactory)
         {
             scope = container.BeginLifetimeScope();
             DataContextFactory = dataContextFactory;
@@ -20,20 +20,28 @@ namespace RolePlayedGamesHelper.Repository.RavenDb
         private bool _isDisposed;
 
         /// <inheritdoc />
-        public override IDataContextFactory<IDocumentSession> DataContextFactory { get; }
+        public override RavenDbContextFactory DataContextFactory { get; }
 
         /// <inheritdoc />
         protected override IRepositoryFactory CreateRepositoryFactory()
         {
-            return scope.Resolve<IRepositoryFactory>();
+            return new RavenDbRepositoryFactory(DataContextFactory);
         }
 
         /// <inheritdoc />
         public override int? SaveChanges()
         {
-            throw new NotImplementedException();
+            try
+            {
+                DataContextFactory.GetContext().SaveChanges();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
         }
-        public void Dispose()
+        public override void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);

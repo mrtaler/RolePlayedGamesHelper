@@ -3,7 +3,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using RolePlayedGamesHelper.Repository.SharpRepository.Caching;
 using RolePlayedGamesHelper.Repository.SharpRepository.FetchStrategies;
-using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces.Repository;
 using RolePlayedGamesHelper.Repository.SharpRepository.Queries;
 using RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBase;
@@ -11,12 +10,11 @@ using RolePlayedGamesHelper.Repository.SharpRepository.Specifications;
 
 namespace RolePlayedGamesHelper.Repository.SharpRepository
 {
-    public abstract class LinqRepositoryBase<T, TKey, TContext> : RepositoryBase<T, TKey, TContext>
+    public abstract class LinqRepositoryBase<T, TKey> : RepositoryBase<T, TKey>
         where T : class
-        where TContext : class, IDisposable
     {
-        protected LinqRepositoryBase(IDataContextFactory<TContext> dataContextFactory, ICachingStrategy<T, TKey> cachingStrategy = null)
-            : base(dataContextFactory, cachingStrategy)
+        protected LinqRepositoryBase(ICachingStrategy<T, TKey> cachingStrategy = null)
+            : base( cachingStrategy)
         {
         }
 
@@ -121,7 +119,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository
 
             var query = outerQuery.Join(innerQuery, outerKeySelectorFunc, innerKeySelectorFunc, resultSelectorFunc).AsQueryable();
             SetTraceInfo("Join", query);
-            return new CompositeRepository<TResult, TContext>(DataContextFactory,query);
+            return new CompositeRepository<TResult>(query);
         }
     }
 }

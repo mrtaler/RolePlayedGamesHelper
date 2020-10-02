@@ -95,10 +95,10 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository
             {
                 innerQuery = innerQuery.ToList().AsQueryable();
                 outerQuery = outerQuery.ToList().AsQueryable();
-                return new CompositeRepository<TResult, TContext>(DataContextFactory, outerQuery.Join(innerQuery, outerKeySelector, innerKeySelector, resultSelector));
+                return new CompositeRepository<TResult>(outerQuery.Join(innerQuery, outerKeySelector, innerKeySelector, resultSelector));
             }
 
-            return new CompositeRepository<TResult, TContext>(DataContextFactory,outerQuery.Join(innerQuery, outerKeySelector, innerKeySelector, resultSelector));
+            return new CompositeRepository<TResult>(outerQuery.Join(innerQuery, outerKeySelector, innerKeySelector, resultSelector));
         }
     }
 
@@ -186,10 +186,10 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository
             {
                 innerQuery = innerQuery.ToList().AsQueryable();
                 outerQuery = outerQuery.ToList().AsQueryable();
-                return new CompositeRepository<TResult,TContext>(DataContextFactory,outerQuery.Join(innerQuery, outerKeySelector, innerKeySelector, resultSelector));
+                return new CompositeRepository<TResult>(outerQuery.Join(innerQuery, outerKeySelector, innerKeySelector, resultSelector));
             }
 
-            return new CompositeRepository<TResult,TContext>(DataContextFactory, outerQuery.Join(innerQuery, outerKeySelector, innerKeySelector, resultSelector));
+            return new CompositeRepository<TResult>( outerQuery.Join(innerQuery, outerKeySelector, innerKeySelector, resultSelector));
         }
     }
 
@@ -277,10 +277,10 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository
             {
                 innerQuery = innerQuery.ToList().AsQueryable();
                 outerQuery = outerQuery.ToList().AsQueryable();
-                return new CompositeRepository<TResult,TContext>(DataContextFactory, outerQuery.Join(innerQuery, outerKeySelector, innerKeySelector, resultSelector));
+                return new CompositeRepository<TResult>( outerQuery.Join(innerQuery, outerKeySelector, innerKeySelector, resultSelector));
             }
 
-            return new CompositeRepository<TResult,TContext>(DataContextFactory, outerQuery.Join(innerQuery, outerKeySelector, innerKeySelector, resultSelector));
+            return new CompositeRepository<TResult>( outerQuery.Join(innerQuery, outerKeySelector, innerKeySelector, resultSelector));
         }
     }
 }

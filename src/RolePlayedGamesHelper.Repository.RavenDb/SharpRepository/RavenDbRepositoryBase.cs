@@ -3,22 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Raven.Client.Documents.Session;
+using RolePlayedGamesHelper.Repository.SharpRepository;
+using RolePlayedGamesHelper.Repository.SharpRepository.Caching;
+using RolePlayedGamesHelper.Repository.SharpRepository.FetchStrategies;
+using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
+using RolePlayedGamesHelper.Repository.SharpRepository.Queries;
+using RolePlayedGamesHelper.Repository.SharpRepository.Specifications;
 
 namespace RolePlayedGamesHelper.Repository.RavenDb.SharpRepository
 {
-    public class RavenDbRepositoryBase<TEntity, TKey, TContext>
-        : LinqRepositoryBase<TEntity, TKey, TContext>
+    public class RavenDbRepositoryBase<TEntity, TKey>
+        : LinqRepositoryBase<TEntity, TKey>
         where TEntity : class
-        where TContext : class, IDocumentSession, IDisposable
     {
+        public IDocumentSession Session;
 
-        internal RavenDbRepositoryBase(
-            IDataContextFactory<TContext>   dataContextFactory,
+        internal RavenDbRepositoryBase(IDocumentSession session,
             ICachingStrategy<TEntity, TKey> cachingStrategy = null)
-            : base(dataContextFactory, cachingStrategy)
+            : base(cachingStrategy)
         {
-            if (dataContextFactory == null) throw new ArgumentNullException("dbContext");
-          /*  Initialize();*/
+            Session = session ?? throw new ArgumentNullException("dbContext");
+            /*  Initialize();*/
         }
 
 
@@ -58,14 +63,14 @@ namespace RolePlayedGamesHelper.Repository.RavenDb.SharpRepository
         protected override IQueryable<TEntity> BaseQuery(IFetchStrategy<TEntity> fetchStrategy = null)
         {
             // TODO: see about Raven Include syntax
-            return DataContext.Query<TEntity>();
+            return Session.Query<TEntity>();
         }
 
         protected override TEntity GetQuery(TKey key, IFetchStrategy<TEntity> fetchStrategy)
         {
             try
             {
-                return typeof(TKey) == typeof(string) ? DataContext.Load<TEntity>(key as string) : base.GetQuery(key, fetchStrategy);
+                return typeof(TKey) == typeof(string) ? Session.Load<TEntity>(key as string) : base.GetQuery(key, fetchStrategy);
             }
             catch (ArgumentException)
             {
@@ -313,12 +318,12 @@ namespace RolePlayedGamesHelper.Repository.RavenDb.SharpRepository
                 SetPrimaryKey(entity, id);
             }
 
-            DataContext.Store(entity);
+            Session.Store(entity);
         }
 
         protected override void DeleteItem(TEntity entity)
         {
-            DataContext.Delete(entity);
+            Session.Delete(entity);
         }
 
         protected override void UpdateItem(TEntity entity)
@@ -328,7 +333,7 @@ namespace RolePlayedGamesHelper.Repository.RavenDb.SharpRepository
 
         public override void Dispose()
         {
-            DataContext?.Dispose();
+            Session?.Dispose();
         }
 
         public override bool GenerateKeyOnAdd

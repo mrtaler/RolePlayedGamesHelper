@@ -5,12 +5,12 @@ using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
 namespace RolePlayedGamesHelper.Repository.RavenDb
 {
-    public sealed class DefaultRavenSessionFactory : IDataContextFactory<IDocumentSession>
+    public sealed class RavenDbContextFactory : IDataContextFactory<IDocumentSession>
     {
         private readonly IDocumentStore store;
-        private IRavenContext currentSession;
+        private IDocumentSession currentSession;
 
-        public DefaultRavenSessionFactory(IDocumentStore docStore)
+        public RavenDbContextFactory(IDocumentStore docStore)
         {
             store = docStore;
         }
@@ -20,8 +20,8 @@ namespace RolePlayedGamesHelper.Repository.RavenDb
             if (currentSession != null)
                 return currentSession;
             var openSession = store.OpenSession();
-           // currentSession = (IRavenContext)openSession;
-            return openSession;
+            currentSession = openSession;
+            return currentSession;
         }
 
         public void Dispose()

@@ -3,13 +3,13 @@ using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces.Repository;
 
 namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBase
 {
-    public abstract partial class RepositoryBase<T, TKey, TContext> 
+    public abstract partial class RepositoryBase<T, TKey> 
     {
         private sealed class DisabledCache : IDisabledCache
         {
-            private readonly RepositoryBase<T, TKey, TContext> _repository;
+            private readonly RepositoryBase<T, TKey> _repository;
 
-            public DisabledCache(RepositoryBase<T, TKey, TContext> repository)
+            public DisabledCache(RepositoryBase<T, TKey> repository)
             {
                 _repository                = repository;
                 _repository.CachingEnabled = false;

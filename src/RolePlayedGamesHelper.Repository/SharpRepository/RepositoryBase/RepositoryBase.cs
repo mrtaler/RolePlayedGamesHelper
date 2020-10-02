@@ -17,19 +17,11 @@ using RolePlayedGamesHelper.Repository.SharpRepository.Specifications;
 
 namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBase
 {
-    public abstract partial class RepositoryBase<T, TKey, TContext> : IRepository<T, TKey>
+    public abstract partial class RepositoryBase<T, TKey> : IRepository<T, TKey>
         where T : class
-        where TContext : class, IDisposable
     {
-        private TContext dataContext;
-        protected IDataContextFactory<TContext> DataContextFactory { get; private protected set; }
-        protected TContext DataContext => dataContext ??= DataContextFactory.GetContext();
-
-        protected RepositoryBase(IDataContextFactory<TContext> dataContextFactory,
-            ICachingStrategy<T, TKey> cachingStrategy = null)
+        protected RepositoryBase(ICachingStrategy<T, TKey> cachingStrategy = null)
         {
-            DataContextFactory = dataContextFactory;
-
             if (typeof(T) == typeof(TKey))
             {
                 // this check is mainly because of the overloaded Delete methods Delete(T) and Delete(TKey), ambiguous reference if the generics are the same

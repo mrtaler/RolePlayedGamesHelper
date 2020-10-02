@@ -11,6 +11,7 @@ namespace RolePlayedGamesHelper.Repository
         where TContext : class
         where TDataContextFactory : IDataContextFactory<TContext>
     {
+        private TContext context;
         protected UnitOfWorkBase()
         {
             RepositoryFactories = new List<object>();
@@ -18,7 +19,7 @@ namespace RolePlayedGamesHelper.Repository
         }
 
         public abstract TDataContextFactory DataContextFactory { get; }
-
+        public abstract void Dispose();
         protected readonly List<object> RepositoryFactories;
 
         protected readonly List<IRepository> Repositories;
@@ -120,31 +121,11 @@ namespace RolePlayedGamesHelper.Repository
             return repo;
         }
 
-        public abstract int?  SaveChanges();
-    }
+        public abstract int? SaveChanges();
 
-    public abstract class RepositoryFactoryBase<TDataContextFactory, TContext> : 
-        IRepositoryFactory<TDataContextFactory, TContext>
-        where TDataContextFactory : IDataContextFactory<TContext>
-        where TContext : class
-    {
-        public TDataContextFactory DataContextFactory { get; }
-
-        protected RepositoryFactoryBase(TDataContextFactory dataContextFactory)
+        protected TContext GetContext()
         {
-            DataContextFactory = dataContextFactory;
+            return context ?? DataContextFactory.GetContext();
         }
-
-        /// <inheritdoc />
-        public abstract IRepository<T> GetInstance<T>() where T : class, new();
-
-        /// <inheritdoc />
-        public abstract IRepository<T, TKey> GetInstance<T, TKey>() where T : class, new();
-
-        /// <inheritdoc />
-        public abstract ICompoundKeyRepository<T, TKey, TKey2> GetInstance<T, TKey, TKey2>() where T : class, new();
-
-        /// <inheritdoc />
-        public abstract ICompoundKeyRepository<T, TKey, TKey2, TKey3> GetInstance<T, TKey, TKey2, TKey3>() where T : class, new();
     }
 }

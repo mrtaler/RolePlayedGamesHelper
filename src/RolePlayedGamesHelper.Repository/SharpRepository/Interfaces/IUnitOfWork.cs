@@ -1,8 +1,9 @@
-﻿using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces.Repository;
+﻿using System;
+using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces.Repository;
 
 namespace RolePlayedGamesHelper.Repository.SharpRepository.Interfaces
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork: IDisposable
     {
          int? SaveChanges();
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Caching.Memory;
 using RolePlayedGamesHelper.Repository.SharpRepository.Configuration;
+using RolePlayedGamesHelper.Repository.SharpRepository.Ioc;
 
 namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
 {
