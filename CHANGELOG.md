@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-feature-develop.1](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.0.0...v1.1.0-feature-develop.1) (2020-10-03)
+
+
+        ### Miscellaneous
+
+* fix(mongo):change mongo repo ([9430015](https://github.com/mrtaler/RolePlayedGamesHelper/commit/9430015e6d1e0ae3abcc9f7ac345555cc023c4a2))* feat(Mongo):add mongo repositories ([7f1bb7f](https://github.com/mrtaler/RolePlayedGamesHelper/commit/7f1bb7fc489c5bb45d56f2ed700aaade048bda27))* change repository ([391b0fa](https://github.com/mrtaler/RolePlayedGamesHelper/commit/391b0fa63b9a1d8b8e33a3cdb98f3bdb9d973d0b))* add RavenDB repository implimentations ([3134ccb](https://github.com/mrtaler/RolePlayedGamesHelper/commit/3134ccb846f0b16e67f07be6cbb355bebb74d09e))* add XML repository implimentations ([6943f43](https://github.com/mrtaler/RolePlayedGamesHelper/commit/6943f43e9af49536f22b00aa3473ccb6c11f0905))* Add repository implimentations (init) ([bfae925](https://github.com/mrtaler/RolePlayedGamesHelper/commit/bfae925151bff34dbf2f287b41b542bedf207bda))* **version:** Release 1.1.0-release-candidate.1 ([f277712](https://github.com/mrtaler/RolePlayedGamesHelper/commit/f2777126ddffd1a5e61a5617b7c6fc211c9959c5))
+
+        ### Features
+
+* Add general repository(sharpRepository) ([be4323b](https://github.com/mrtaler/RolePlayedGamesHelper/commit/be4323b8b162e3866822e02dd21a46506251fab3))* **RavenDB:** enable raven db ([fba5cc1](https://github.com/mrtaler/RolePlayedGamesHelper/commit/fba5cc11a5ea923f33e71880c353c3f07de5c51e))* initial commit for dev branch ([a8ad6e2](https://github.com/mrtaler/RolePlayedGamesHelper/commit/a8ad6e23824f6309848a9ca24d8b7f5c88f71631))
+
 # [1.1.0-release-candidate.1](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.0.0...v1.1.0-release-candidate.1) (2020-09-28)
 
 
