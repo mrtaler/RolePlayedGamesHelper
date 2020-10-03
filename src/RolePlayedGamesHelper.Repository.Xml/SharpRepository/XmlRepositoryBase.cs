@@ -6,33 +6,28 @@ using System.Xml.Serialization;
 using RolePlayedGamesHelper.Repository.SharpRepository;
 using RolePlayedGamesHelper.Repository.SharpRepository.Caching;
 using RolePlayedGamesHelper.Repository.SharpRepository.FetchStrategies;
-using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
-namespace RolePlayedGamesHelper.Repository.Xml
+namespace RolePlayedGamesHelper.Repository.Xml.SharpRepository
 {
-    public abstract class XmlRepositoryBase<T, TKey> : LinqRepositoryBase<T, TKey> 
+    public abstract class XmlRepositoryBase<T, TKey> : LinqRepositoryBase<T, TKey>, IXmlRepositoryBase
         where T : class, new()
     {
         private List<T> _items = new List<T>();
-        private string _storagePath;
+        private string storagePath;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="storagePath">Path to the directory.  The XML filename is determined by the TypeName</param>
         /// <param name="cachingStrategy"></param>
-        internal XmlRepositoryBase(List<T> items, ICachingStrategy<T, TKey> cachingStrategy = null) : base(cachingStrategy)
+        internal XmlRepositoryBase(List<T> items, string storagePath, ICachingStrategy<T, TKey> cachingStrategy = null) : base(cachingStrategy)
         {
-            _items = items;
+            _items           = items;
+            this.storagePath = storagePath;
         }
-      
-        protected List<T> Items
-        {
-            get
-            {
-                return _items;
-            }
-        }
+
+        public List<T> Items => _items;
+
 
         protected override IQueryable<T> BaseQuery(IFetchStrategy<T> fetchStrategy = null)
         {
@@ -83,13 +78,13 @@ namespace RolePlayedGamesHelper.Repository.Xml
             return GetPrimaryKey(item, out TKey value) && keyValue.Equals(value);
         }
 
-        //protected override void SaveChanges()
-        //{
-        //    var writer = new StreamWriter(_storagePath, false);
-        //    var serializer = new XmlSerializer(typeof(List<T>));
-        //    serializer.Serialize(writer, Items);
-        //    writer.Close();
-        //}
+        public void SaveChanges()
+        {
+            var writer     = new StreamWriter(storagePath, false);
+            var serializer = new XmlSerializer(typeof(List<T>));
+            serializer.Serialize(writer, Items);
+            writer.Close();
+        }
 
         public override void Dispose()
         {
@@ -124,5 +119,10 @@ namespace RolePlayedGamesHelper.Repository.Xml
         {
             return "SharpRepository.XmlRepository";
         }
+    }
+
+    public interface IXmlRepositoryBase
+    {
+        void SaveChanges();
     }
 }

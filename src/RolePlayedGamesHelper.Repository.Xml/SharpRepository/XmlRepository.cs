@@ -17,7 +17,7 @@ namespace RolePlayedGamesHelper.Repository.Xml.SharpRepository
         /// </summary>
         /// <param name="storagePath">Path to the directory where the XML files are stored.  The XML filename is determined by the TypeName</param>
         /// <param name="cachingStrategy">The caching strategy.  Defaults to <see cref="NoCachingStrategy&lt;T&gt;" />.</param>
-        public XmlRepository(List<T> items, ICachingStrategy<T, TKey> cachingStrategy = null) : base(items, cachingStrategy)
+        public XmlRepository(List<T> items, string storagePath, ICachingStrategy<T, TKey> cachingStrategy = null) : base(items, storagePath, cachingStrategy)
         {
         }
     }
@@ -35,7 +35,7 @@ namespace RolePlayedGamesHelper.Repository.Xml.SharpRepository
         /// </summary>
         /// <param name="storagePath">Path to the directory where the XML files are stored.  The XML filename is determined by the TypeName</param>
         /// <param name="cachingStrategy">The caching strategy.  Defaults to <see cref="NoCachingStrategy&lt;T&gt;" />.</param>
-        public XmlRepository(List<T> items, ICachingStrategy<T, int> cachingStrategy = null) : base(items, cachingStrategy)
+        public XmlRepository(List<T> items, string storagePath, ICachingStrategy<T, int> cachingStrategy = null) : base(items, storagePath, cachingStrategy)
         {
         }
     }
