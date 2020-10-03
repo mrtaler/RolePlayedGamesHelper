@@ -26,7 +26,7 @@ namespace RolePlayedGamesHelper.Repository
 
         protected abstract IRepositoryFactory CreateRepositoryFactory();
 
-        public IRepositoryFactory GetRepositoryFactory()
+        public virtual IRepositoryFactory GetRepositoryFactory()
         {
             var factory = RepositoryFactories.OfType<IRepositoryFactory>().FirstOrDefault();
             if (factory != null)
@@ -42,7 +42,7 @@ namespace RolePlayedGamesHelper.Repository
             return factory;
         }
 
-        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class, new()
+        public virtual IRepository<TEntity> GetRepository<TEntity>() where TEntity : class, new()
         {
             var repo = Repositories.OfType<IRepository<TEntity>>().FirstOrDefault();
             if (repo == null)
@@ -61,7 +61,7 @@ namespace RolePlayedGamesHelper.Repository
 
             return repo;
         }
-        public IRepository<TEntity, TKey> GetRepository<TEntity, TKey>() where TEntity : class, new()
+        public virtual IRepository<TEntity, TKey> GetRepository<TEntity, TKey>() where TEntity : class, new()
         {
             var repo = Repositories.OfType<IRepository<TEntity, TKey>>().FirstOrDefault();
             if (repo == null)
@@ -81,7 +81,7 @@ namespace RolePlayedGamesHelper.Repository
             return repo;
         }
 
-        public ICompoundKeyRepository<TEntity, TKey, TKey2> GetRepository<TEntity, TKey, TKey2>() where TEntity : class, new()
+        public virtual ICompoundKeyRepository<TEntity, TKey, TKey2> GetRepository<TEntity, TKey, TKey2>() where TEntity : class, new()
         {
             var repo = Repositories.OfType<ICompoundKeyRepository<TEntity, TKey, TKey2>>().FirstOrDefault();
             if (repo == null)
@@ -101,7 +101,7 @@ namespace RolePlayedGamesHelper.Repository
             return repo;
         }
 
-        public ICompoundKeyRepository<TEntity, TKey, TKey2, TKey3> GetRepository<TEntity, TKey, TKey2, TKey3>() where TEntity : class, new()
+        public virtual ICompoundKeyRepository<TEntity, TKey, TKey2, TKey3> GetRepository<TEntity, TKey, TKey2, TKey3>() where TEntity : class, new()
         {
             var repo = Repositories.OfType<ICompoundKeyRepository<TEntity, TKey, TKey2, TKey3>>().FirstOrDefault();
             if (repo == null)
@@ -123,9 +123,5 @@ namespace RolePlayedGamesHelper.Repository
 
         public abstract int? SaveChanges();
 
-        protected TContext GetContext()
-        {
-            return context ?? DataContextFactory.GetContext();
-        }
     }
 }

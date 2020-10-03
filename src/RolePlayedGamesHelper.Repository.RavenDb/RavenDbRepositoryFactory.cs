@@ -11,8 +11,6 @@ namespace RolePlayedGamesHelper.Repository.RavenDb
         {
         }
 
-        #region Overrides of RepositoryFactoryBase<RavenDbContextFactory,IDocumentSession>
-
         /// <inheritdoc />
         public override IRepository<T> GetInstance<T>()
         {
@@ -38,6 +36,5 @@ namespace RolePlayedGamesHelper.Repository.RavenDb
             throw new System.NotImplementedException();
         }
 
-        #endregion
     }
 }

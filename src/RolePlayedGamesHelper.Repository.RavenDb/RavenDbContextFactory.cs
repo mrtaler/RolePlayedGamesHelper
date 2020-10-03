@@ -1,6 +1,5 @@
 ﻿using Raven.Client.Documents;
 using Raven.Client.Documents.Session;
-using RolePlayedGamesHelper.Repository.RavenDb.Interfaces;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
 namespace RolePlayedGamesHelper.Repository.RavenDb

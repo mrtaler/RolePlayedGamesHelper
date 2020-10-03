@@ -21,40 +21,11 @@ namespace RolePlayedGamesHelper.Repository.Xml
         /// </summary>
         /// <param name="storagePath">Path to the directory.  The XML filename is determined by the TypeName</param>
         /// <param name="cachingStrategy"></param>
-        internal XmlRepositoryBase(
-            ICachingStrategy<T, TKey>                      cachingStrategy = null) : base( cachingStrategy) 
+        internal XmlRepositoryBase(List<T> items, ICachingStrategy<T, TKey> cachingStrategy = null) : base(cachingStrategy)
         {
-            Initialize();
+            _items = items;
         }
-
-        private void Initialize()
-        {
-            _items       = new List<T>();
-            _storagePath = "";//storagePath;
-
-            if (!_storagePath.EndsWith(@"\"))
-            {
-                _storagePath += @"\";
-            }
-
-            _storagePath = String.Format("{0}{1}.xml", _storagePath, TypeName);
-
-            // load up the items
-            LoadItems();
-        }
-
-        private void LoadItems()
-        {
-            if (!File.Exists(_storagePath)) return;
-
-            using (var stream = new FileStream(_storagePath, FileMode.Open))
-            using (var reader = new StreamReader(stream))
-            {
-                var serializer = new XmlSerializer(typeof(List<T>));
-                _items = (List<T>)serializer.Deserialize(reader);
-            }
-        }
-
+      
         protected List<T> Items
         {
             get
@@ -111,15 +82,15 @@ namespace RolePlayedGamesHelper.Repository.Xml
         {
             return GetPrimaryKey(item, out TKey value) && keyValue.Equals(value);
         }
-/*
-        protected override void SaveChanges()
-        {
-            var writer = new StreamWriter(_storagePath, false);
-            var serializer = new XmlSerializer(typeof(List<T>));
-            serializer.Serialize(writer, Items);
-            writer.Close();
-        }
-*/
+
+        //protected override void SaveChanges()
+        //{
+        //    var writer = new StreamWriter(_storagePath, false);
+        //    var serializer = new XmlSerializer(typeof(List<T>));
+        //    serializer.Serialize(writer, Items);
+        //    writer.Close();
+        //}
+
         public override void Dispose()
         {
         }

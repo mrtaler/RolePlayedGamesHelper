@@ -1,7 +1,6 @@
 ﻿using System;
 using Autofac;
 using Raven.Client.Documents.Session;
-using RolePlayedGamesHelper.Repository.RavenDb.Interfaces;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
 namespace RolePlayedGamesHelper.Repository.RavenDb
@@ -13,7 +12,7 @@ namespace RolePlayedGamesHelper.Repository.RavenDb
         private ILifetimeScope scope;
         public RavenUnitOfWork(ILifetimeScope container, RavenDbContextFactory dataContextFactory)
         {
-            scope = container.BeginLifetimeScope();
+            scope              = container.BeginLifetimeScope();
             DataContextFactory = dataContextFactory;
         }
 
