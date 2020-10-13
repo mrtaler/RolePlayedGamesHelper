@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-feature-develop.2](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-feature-develop.1...v1.1.0-feature-develop.2) (2020-10-13)
+
+
+        ### Miscellaneous
+
+* Merge branch 'feature/GeneralRepository' of github.com:mrtaler/RolePlayedGamesHelper into feature/GeneralRepository ([eb1757a](https://github.com/mrtaler/RolePlayedGamesHelper/commit/eb1757a0ca6231d1547402d2ca633f57c6d7dd07))* fix(Test):Fixed context testing ([0d32ace](https://github.com/mrtaler/RolePlayedGamesHelper/commit/0d32ace3af8f6477bc6eeee2f9fbe45555861e1f))
+
+        ### Features
+
+* **Core:** added entity framework core repository ([fb793cc](https://github.com/mrtaler/RolePlayedGamesHelper/commit/fb793cc690e5e743616c91947d336e1ee3421ccc))
+
 # [1.1.0-feature-develop.1](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.0.0...v1.1.0-feature-develop.1) (2020-10-03)
 
 
