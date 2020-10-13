@@ -12,12 +12,11 @@ using RolePlayedGamesHelper.Repository.SharpRepository.Specifications;
 namespace RolePlayedGamesHelper.Repository.SharpRepository
 {
     // TODO: everything is the same as LinqRepositoryBase except the caching strategy and the GetQuery
-    public abstract class LinqCompoundKeyRepositoryBase<T, TContext> : CompoundKeyRepositoryBase<T, TContext>
+    public abstract class LinqCompoundKeyRepositoryBase<T> : CompoundKeyRepositoryBase<T>
         where T : class
-        where TContext : class, IDisposable
     {
-        protected LinqCompoundKeyRepositoryBase(IDataContextFactory<TContext> dataContextFactory, ICompoundKeyCachingStrategy<T> cachingStrategy = null)
-            : base(dataContextFactory, cachingStrategy)
+        protected LinqCompoundKeyRepositoryBase( ICompoundKeyCachingStrategy<T> cachingStrategy = null)
+            : base( cachingStrategy)
         {
         }
 
@@ -103,12 +102,11 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository
     }
 
     // TODO: everything is the same as LinqRepositoryBase except the caching strategy and the GetQuery
-    public abstract class LinqCompoundKeyRepositoryBase<T, TKey, TKey2, TContext> : CompoundKeyRepositoryBase<T, TKey, TKey2, TContext>
+    public abstract class LinqCompoundKeyRepositoryBase<T, TKey, TKey2> : CompoundKeyRepositoryBase<T, TKey, TKey2>
         where T : class
-        where TContext : class, IDisposable
     {
-        protected LinqCompoundKeyRepositoryBase(IDataContextFactory<TContext> dataContextFactory, ICompoundKeyCachingStrategy<T, TKey, TKey2> cachingStrategy = null)
-            : base(dataContextFactory, cachingStrategy)
+        protected LinqCompoundKeyRepositoryBase( ICompoundKeyCachingStrategy<T, TKey, TKey2> cachingStrategy = null)
+            : base( cachingStrategy)
         {
         }
 
@@ -194,12 +192,11 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository
     }
 
     // TODO: everything is the same as LinqRepositoryBase except the caching strategy and the GetQuery
-    public abstract class LinqCompoundKeyRepositoryBase<T, TKey, TKey2, TKey3, TContext> : CompoundKeyRepositoryBase<T, TKey, TKey2, TKey3, TContext>
+    public abstract class LinqCompoundKeyRepositoryBase<T, TKey, TKey2, TKey3> : CompoundKeyRepositoryBase<T, TKey, TKey2, TKey3>
         where T : class
-        where TContext : class, IDisposable
     {
-        protected LinqCompoundKeyRepositoryBase(IDataContextFactory<TContext> dataContextFactory, ICompoundKeyCachingStrategy<T, TKey, TKey2, TKey3> cachingStrategy = null)
-            : base(dataContextFactory, cachingStrategy)
+        protected LinqCompoundKeyRepositoryBase(ICompoundKeyCachingStrategy<T, TKey, TKey2, TKey3> cachingStrategy = null)
+            : base( cachingStrategy)
         {
         }
 

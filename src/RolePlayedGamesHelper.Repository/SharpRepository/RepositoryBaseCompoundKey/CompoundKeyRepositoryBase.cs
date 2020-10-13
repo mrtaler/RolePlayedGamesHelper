@@ -14,14 +14,9 @@ using RolePlayedGamesHelper.Repository.SharpRepository.Specifications;
 
 namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoundKey
 {
-    public abstract partial class CompoundKeyRepositoryBase<T, TContext> : ICompoundKeyRepository<T>
+    public abstract partial class CompoundKeyRepositoryBase<T> : ICompoundKeyRepository<T>
         where T : class
-        where TContext : class, IDisposable
     {
-        private TContext dataContext;
-        protected IDataContextFactory<TContext> DataContextFactory { get; private protected set; }
-        protected TContext DataContext => dataContext ??= DataContextFactory.GetContext();
-
         // the caching strategy used
         private ICompoundKeyCachingStrategy<T> _cachingStrategy;
 
@@ -40,10 +35,8 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoun
             get { return _queryManager.CacheUsed; }
         }
 
-        protected CompoundKeyRepositoryBase(IDataContextFactory<TContext> dataContextFactory, ICompoundKeyCachingStrategy<T> cachingStrategy = null)
+        protected CompoundKeyRepositoryBase( ICompoundKeyCachingStrategy<T> cachingStrategy = null)
         {
-            DataContextFactory = dataContextFactory;
-
             CachingStrategy = cachingStrategy ?? new NoCompoundKeyCachingStrategy<T>();
             _typeName = typeof(T).Name;
         }
@@ -475,14 +468,9 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoun
         }
     }
 
-    public abstract partial class CompoundKeyRepositoryBase<T, TKey, TKey2, TContext> : ICompoundKeyRepository<T, TKey, TKey2>
+    public abstract partial class CompoundKeyRepositoryBase<T, TKey, TKey2> : ICompoundKeyRepository<T, TKey, TKey2>
         where T : class
-        where TContext : class, IDisposable
     {
-        private TContext dataContext;
-        protected IDataContextFactory<TContext> DataContextFactory { get; private protected set; }
-        protected TContext DataContext => dataContext ??= DataContextFactory.GetContext();
-
         // the caching strategy used
         private ICompoundKeyCachingStrategy<T, TKey, TKey2> _cachingStrategy;
 
@@ -501,7 +489,6 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoun
             get { return _queryManager.CacheUsed; }
         }
         protected CompoundKeyRepositoryBase(
-            IDataContextFactory<TContext> dataContextFactory, 
             ICompoundKeyCachingStrategy<T, TKey, TKey2> cachingStrategy = null)
         {
             if (typeof(T) == typeof(TKey))
@@ -948,13 +935,9 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoun
         }
     }
 
-    public abstract partial class CompoundKeyRepositoryBase<T, TKey, TKey2, TKey3, TContext> : ICompoundKeyRepository<T, TKey, TKey2, TKey3>
+    public abstract partial class CompoundKeyRepositoryBase<T, TKey, TKey2, TKey3> : ICompoundKeyRepository<T, TKey, TKey2, TKey3>
         where T : class
-        where TContext : class, IDisposable
     {
-        private TContext dataContext;
-        protected IDataContextFactory<TContext> DataContextFactory { get; private protected set; }
-        protected TContext DataContext => dataContext ??= DataContextFactory.GetContext();
         // the caching strategy used
         private ICompoundKeyCachingStrategy<T, TKey, TKey2, TKey3> _cachingStrategy;
 
@@ -973,11 +956,8 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoun
             get { return _queryManager.CacheUsed; }
         }
 
-      
 
- 
-
-        protected CompoundKeyRepositoryBase(IDataContextFactory<TContext> dataContextFactory, ICompoundKeyCachingStrategy<T, TKey, TKey2, TKey3> cachingStrategy = null)
+        protected CompoundKeyRepositoryBase(ICompoundKeyCachingStrategy<T, TKey, TKey2, TKey3> cachingStrategy = null)
         {
             if (typeof(T) == typeof(TKey))
             {

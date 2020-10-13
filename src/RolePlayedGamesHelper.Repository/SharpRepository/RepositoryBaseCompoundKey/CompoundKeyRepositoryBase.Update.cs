@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoundKey
 {
-    public abstract partial class CompoundKeyRepositoryBase<T, TContext>
+    public abstract partial class CompoundKeyRepositoryBase<T>
     {
 
         // This is the actual implementation that the derived class needs to implement
@@ -36,7 +36,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoun
         }
     }
 
-    public abstract partial class CompoundKeyRepositoryBase<T, TKey, TKey2, TContext>
+    public abstract partial class CompoundKeyRepositoryBase<T, TKey, TKey2>
     {
         // This is the actual implementation that the derived class needs to implement
         protected abstract void UpdateItem(T entity);
@@ -68,7 +68,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoun
         }
     }
 
-    public abstract partial class CompoundKeyRepositoryBase<T, TKey, TKey2, TKey3, TContext>
+    public abstract partial class CompoundKeyRepositoryBase<T, TKey, TKey2, TKey3>
     {
         // This is the actual implementation that the derived class needs to implement
         protected abstract void UpdateItem(T entity);

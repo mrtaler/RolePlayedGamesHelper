@@ -18,7 +18,7 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
 
         }
 
-        [Fact]
+        [Fact(Skip = "specific reason")]
         public void Test1()
         {
             var uow  = container.Resolve<RavenUnitOfWork>();

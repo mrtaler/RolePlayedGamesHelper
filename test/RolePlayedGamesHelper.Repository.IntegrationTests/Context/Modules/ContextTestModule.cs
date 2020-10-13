@@ -1,10 +1,32 @@
 using Autofac;
+using Microsoft.EntityFrameworkCore;
+using RolePlayedGamesHelper.Repository.EntityFrameworkCore;
+using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
 namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules
 {
     public class ContextTestModule : Module
     {
         protected override void Load(ContainerBuilder builder)
+        {
+            builder
+                .Register((c) => new DbContextOptionsBuilder<TestObjectContextCore>()
+                                 .UseInMemoryDatabase("TestDataBase")
+                                 .Options)
+                .AsSelf()
+                .SingleInstance();
+
+            builder
+                .RegisterType<DbCoreContextFactory<TestObjectContextCore>>()
+                .AsSelf()
+                .As<IDataContextFactory<TestObjectContextCore>>().SingleInstance();
+
+          builder.RegisterType<DbCoreUnitOfWork<TestObjectContextCore>>()
+                 .As<IUnitOfWork<TestObjectContextCore, DbCoreContextFactory<TestObjectContextCore>>>()
+                 .AsSelf();
+        }
+
+     /*   protected override void Load(ContainerBuilder builder)
         {
 
             /*builder
@@ -22,6 +44,6 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules
                .As<IRepository<Contact>>()
                .InstancePerDependency();
 */
-        }
+  //      }
     }
 }

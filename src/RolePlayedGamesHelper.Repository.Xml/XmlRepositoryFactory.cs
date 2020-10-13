@@ -20,7 +20,7 @@ namespace RolePlayedGamesHelper.Repository.Xml
         /// <inheritdoc />
         public override IRepository<T> GetInstance<T>()
         {
-            var (items, storagePath) = getrep<T>();
+            var (items, storagePath) = Getrep<T>();
 
             return string.IsNullOrEmpty(DataContextFactory.GetContext())
                 ? throw new ConfigurationErrorsException(
@@ -32,7 +32,7 @@ namespace RolePlayedGamesHelper.Repository.Xml
         /// <inheritdoc />
         public override IRepository<T, TKey> GetInstance<T, TKey>()
         {
-            var (items, storagePath) = getrep<T>();
+            var (items, storagePath) = Getrep<T>();
 
 
             return
@@ -48,29 +48,29 @@ namespace RolePlayedGamesHelper.Repository.Xml
         /// <inheritdoc />
         public override ICompoundKeyRepository<T, TKey, TKey2, TKey3> GetInstance<T, TKey, TKey2, TKey3>() => throw new System.NotImplementedException();
 
-        private (List<T>, string) getrep<T>()
+        private (List<T>, string) Getrep<T>()
         {
-            var _storagePath = DataContextFactory.GetContext();
-            var _items = new List<T>();
+            var storagePath = DataContextFactory.GetContext();
+            var items = new List<T>();
 
-            if (!_storagePath.EndsWith(@"\"))
+            if (!storagePath.EndsWith(@"\"))
             {
-                _storagePath += @"\";
+                storagePath += @"\";
             }
             var entityType = typeof(T);
-            var _typeName = entityType.Name;
+            var typeName = entityType.Name;
 
-            _storagePath = String.Format("{0}{1}.xml", _storagePath, _typeName);
+            storagePath = $"{storagePath}{typeName}.xml";
 
-            if (!File.Exists(_storagePath)) throw new ConfigurationErrorsException(
+            if (!File.Exists(storagePath)) throw new ConfigurationErrorsException(
                 "The directory attribute is required in order to use the XmlRepository via the configuration file.");
 
-            using var stream = new FileStream(_storagePath, FileMode.Open);
+            using var stream = new FileStream(storagePath, FileMode.Open);
             using var reader = new StreamReader(stream);
             var serializer = new XmlSerializer(typeof(List<T>));
-            _items = (List<T>)serializer.Deserialize(reader);
+            items = (List<T>)serializer.Deserialize(reader);
 
-            return (_items, _storagePath);
+            return (items, storagePath);
         }
     }
 }

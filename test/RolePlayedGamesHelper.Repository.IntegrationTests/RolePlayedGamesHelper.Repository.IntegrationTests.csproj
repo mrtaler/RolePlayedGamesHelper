@@ -34,9 +34,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\RolePlayedGamesHelper.Repository.EntityFrameworkCore\RolePlayedGamesHelper.Repository.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\src\RolePlayedGamesHelper.Repository.MongoDb\RolePlayedGamesHelper.Repository.MongoDb.csproj" />
     <ProjectReference Include="..\..\src\RolePlayedGamesHelper.Repository.RavenDb\RolePlayedGamesHelper.Repository.RavenDb.csproj" />
     <ProjectReference Include="..\..\src\RolePlayedGamesHelper.Repository.Xml\RolePlayedGamesHelper.Repository.Xml.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TestObjects\Context\" />
   </ItemGroup>
 
 </Project>
