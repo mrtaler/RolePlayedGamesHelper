@@ -20,11 +20,7 @@ namespace RolePlayedGamesHelper.Repository.EntityFrameworkCore.SharpRepository
             : base(cachingStrategy)
         {
             this.context = contextFactory;
-        }
-
-        private void Initialize()
-        {
-            DbSet = context.Set<T>();
+            DbSet        = context.Set<T>();
         }
 
         protected override void AddItem(T entity)

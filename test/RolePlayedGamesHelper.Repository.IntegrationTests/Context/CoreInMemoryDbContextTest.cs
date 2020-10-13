@@ -23,6 +23,7 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
 
         }
 
+        [Fact]
         public void Test1()
         {
             var uow   = container.Resolve<IUnitOfWork<TestObjectContextCore, DbCoreContextFactory<TestObjectContextCore>>>();
