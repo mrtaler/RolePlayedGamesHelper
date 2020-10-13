@@ -44,7 +44,7 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
         }
 
         [Fact(Skip = "specific reason")]
-        public void Test1()
+        public void XmlDbContextTest()
         {
             var uow = container.Resolve<XmlUnitOfWork>();
             var repo = uow.GetRepository<Contact, string>();

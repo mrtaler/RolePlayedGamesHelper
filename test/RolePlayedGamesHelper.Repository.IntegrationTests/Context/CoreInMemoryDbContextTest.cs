@@ -24,7 +24,7 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
         }
 
         [Fact]
-        public void Test1()
+        public void CoreInMemoryContextTest()
         {
             var uow   = container.Resolve<IUnitOfWork<TestObjectContextCore, DbCoreContextFactory<TestObjectContextCore>>>();
             var repo  = uow.GetRepository<Contact, string>();

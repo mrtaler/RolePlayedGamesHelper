@@ -21,7 +21,7 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
         }
 
         [Fact(Skip = "specific reason")]
-        public void Test1()
+        public void MongoContextTest()
         {
             var uow   = container.Resolve<MongoDbUnitOfWork>();
             var repo  = uow.GetRepository<ContactMongo, string>();

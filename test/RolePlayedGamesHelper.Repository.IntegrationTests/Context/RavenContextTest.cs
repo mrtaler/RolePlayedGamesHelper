@@ -19,7 +19,7 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
         }
 
         [Fact(Skip = "specific reason")]
-        public void Test1()
+        public void RavenDbContextTest()
         {
             var uow  = container.Resolve<RavenUnitOfWork>();
             var repo = uow.GetRepository<Contact, string>();
