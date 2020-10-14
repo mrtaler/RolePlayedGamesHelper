@@ -45,10 +45,6 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
             uow.SaveChanges();
 
             var tm1 = repo1.GetAll();
-
-
-
-
         }
     }
 }
