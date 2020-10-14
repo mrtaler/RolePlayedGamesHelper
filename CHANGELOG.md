@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.19](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.18...v1.1.0-release-candidate.19) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Nuget:** Chnge nuget configuration ([69a7fec](https://github.com/mrtaler/RolePlayedGamesHelper/commit/69a7fecf70f91e1c7b90622693479edf9b5420a5))
+
 # [1.1.0-release-candidate.18](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.17...v1.1.0-release-candidate.18) (2020-10-14)
 
 
