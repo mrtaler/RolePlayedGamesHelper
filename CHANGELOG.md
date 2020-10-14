@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.6](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.5...v1.1.0-release-candidate.6) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Git Actions:** Fixed SQL Alias ([5f7ce44](https://github.com/mrtaler/RolePlayedGamesHelper/commit/5f7ce44246f89da5e747cfe7bcebd34b1c72f25e))
+
 # [1.1.0-release-candidate.5](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.4...v1.1.0-release-candidate.5) (2020-10-14)
 
 
