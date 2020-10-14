@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.32](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.31...v1.1.0-release-candidate.32) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Actions:** find all nugets ([2e824b7](https://github.com/mrtaler/RolePlayedGamesHelper/commit/2e824b7a2f8a7dfdcefceca3fa0be60beebe966e))
+
 # [1.1.0-release-candidate.31](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.30...v1.1.0-release-candidate.31) (2020-10-14)
 
 
