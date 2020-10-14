@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.34](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.33...v1.1.0-release-candidate.34) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **nuget:** fixed publish pattern ([b751e8d](https://github.com/mrtaler/RolePlayedGamesHelper/commit/b751e8da8b54dbcb5312f6315b6a45be31219ddf))
+
 # [1.1.0-release-candidate.33](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.32...v1.1.0-release-candidate.33) (2020-10-14)
 
 
