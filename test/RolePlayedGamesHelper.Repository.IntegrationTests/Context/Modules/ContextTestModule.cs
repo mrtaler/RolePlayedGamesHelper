@@ -5,7 +5,7 @@ using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
 namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules
 {
-    public class ContextTestModule : Module
+    public class ContextCoreTestModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

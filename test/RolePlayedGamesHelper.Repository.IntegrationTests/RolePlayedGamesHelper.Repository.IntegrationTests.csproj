@@ -28,6 +28,7 @@
     <PackageReference Include="Moq.AutoMock" Version="2.0.1" />
     <PackageReference Include="FluentAssertions" Version="5.10.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Autofac" Version="5.2.0" />
     <PackageReference Include="Serilog" Version="2.9.0" />
     <PackageReference Include="RavenDB.Client" Version="4.2.102" />
@@ -35,6 +36,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\RolePlayedGamesHelper.Repository.EntityFrameworkCore\RolePlayedGamesHelper.Repository.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\src\RolePlayedGamesHelper.Repository.EntityFramework\RolePlayedGamesHelper.Repository.EntityFramework.csproj" />
     <ProjectReference Include="..\..\src\RolePlayedGamesHelper.Repository.MongoDb\RolePlayedGamesHelper.Repository.MongoDb.csproj" />
     <ProjectReference Include="..\..\src\RolePlayedGamesHelper.Repository.RavenDb\RolePlayedGamesHelper.Repository.RavenDb.csproj" />
     <ProjectReference Include="..\..\src\RolePlayedGamesHelper.Repository.Xml\RolePlayedGamesHelper.Repository.Xml.csproj" />

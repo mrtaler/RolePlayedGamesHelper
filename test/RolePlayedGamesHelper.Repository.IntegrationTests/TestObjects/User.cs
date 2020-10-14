@@ -1,25 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using RolePlayedGamesHelper.Repository.SharpRepository.Attributes;
 
 namespace RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects
 {
     public class User
     {
-        public User()
-        {
+        [RepositoryPrimaryKey(Order = 1)]
+        public string Username { get; set; }
 
-        }
+        [RepositoryPrimaryKey(Order = 1)]
+        public int Age { get; set; }
 
-        [Key]
-        public string Id { get; set; }
+        public string FullName { get; set; }
 
-        [Required]
-        public string Email { get; set; }
-
-        [Required]
-        public string FirstName { get; set; }
-
-        [Required]
-        public string LastName { get; set; }
+        public int ContactTypeId { get; set; }
     }
 
     public class UserBrief

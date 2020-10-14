@@ -24,7 +24,7 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
         // set the Compound Key for the User object
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().HasKey(u => new { u.FirstName, u.LastName });
+            modelBuilder.Entity<User>().HasKey(u => new { u.Username, u.Age });
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

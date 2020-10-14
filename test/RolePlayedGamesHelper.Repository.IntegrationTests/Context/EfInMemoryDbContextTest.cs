@@ -1,44 +1,43 @@
-using Autofac;
+﻿using Autofac;
+using RolePlayedGamesHelper.Repository.EntityFramework;
 using RolePlayedGamesHelper.Repository.EntityFrameworkCore;
 using RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects.Assert;
-using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects.Mongo;
-using RolePlayedGamesHelper.Repository.MongoDb;
-using RolePlayedGamesHelper.Repository.RavenDb;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 using Xunit;
 
 namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
 {
-    public class CoreInMemoryDbContextTest : TestBase
+    public class EfInMemoryDbContextTest : TestBase
     {
         private readonly IContainer container;
 
-        public CoreInMemoryDbContextTest()
+        public EfInMemoryDbContextTest()
         {
             var buider = new ContainerBuilder();
-            buider.RegisterModule<ContextCoreTestModule>();
+            buider.RegisterModule<ContextEfTestModule>();
             container = buider.Build();
 
         }
 
         [Fact]
-        public void CoreInMemoryContextTest()
+        public void EfInMemoryContextTest()
         {
-            var uow   = container.Resolve<IUnitOfWork<TestObjectContextCore, DbCoreContextFactory<TestObjectContextCore>>>();
-            var repo  = uow.GetRepository<Contact, string>();
-            var repo1 = uow.GetRepository<EmailAddress, string>();
+            var uow   = container.Resolve<IUnitOfWork<TestObjectContext, DbEfContextFactory<TestObjectContext>>>();
+            var repo  = uow.GetRepository<Contact, int>();
+            var repo1 = uow.GetRepository<EmailAddress, int>();
             //var repo = container.Resolve<IRepository<Contact>>();
             repo.Add(new Contact
             {
-                ContactId=2,
-                Name = "str"
+                ContactId = 1,
+                Name = "str",
+                ContactType = new ContactType(){Abbreviation = "str",Name = "mt"}
 
             });
             repo1.Add(new EmailAddress()
             {
-                ContactId = 2,
+                ContactId = 1,
                 Email = "123123@epam.com",
                 EmailAddressId = 1,
                 Label = "asdasd"
