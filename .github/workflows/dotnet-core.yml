@@ -11,7 +11,7 @@ on:
       - release/**
 jobs:
   semantic-version:
-    name: "Publish to Github Package Registry"
+    name: "Calculate Semantic version"
     runs-on: ubuntu-latest
     outputs:
       output1: ${{ steps.semantic.outputs.new_release_published }}
@@ -48,6 +48,7 @@ jobs:
           echo ${{ steps.semantic.outputs.new_release_minor_version }}
           echo ${{ steps.semantic.outputs.new_release_patch_version }}
   release:
+    name: "Publish to Github Package Registry"
     needs: [semantic-version]
    # if:  ${{ needs.semantic-version.outputs.output1 == 'true' }} 
     runs-on: ubuntu-latest #windows-latest
