@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.11](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.10...v1.1.0-release-candidate.11) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Actions:** refactoring ([ff1eb2d](https://github.com/mrtaler/RolePlayedGamesHelper/commit/ff1eb2d470af19211f1aa4cd4bf49ef93187d3c7))
+
+        ### Miscellaneous
+
+* **Actions:** Fix container name ([ae25aa2](https://github.com/mrtaler/RolePlayedGamesHelper/commit/ae25aa2bbc60d5aaef9bcb706435977b071021ba))
+
 # [1.1.0-release-candidate.10](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.9...v1.1.0-release-candidate.10) (2020-10-14)
 
 
