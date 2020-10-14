@@ -98,7 +98,7 @@ jobs:
       - name: Set nuget source Key
         run: nuget setapikey ${{secrets.AZURE_ARTIFACTS_PAT}} -source "https://pkgs.dev.azure.com/SiarheiLinkevich/50d6e80a-d6b1-461f-b2ba-aa07e2362100/_packaging/BoardGamesArtifacts/nuget/v3/index.json"  
       - name: Publish windows version
-        run: dotnet nuget push .\Nugets\* #--source "BoardGamesArtifacts" --api-key whatever --skip-duplicate
+        run: dotnet nuget push .\Nugets\*  --api-key ${{secrets.AZURE_ARTIFACTS_PAT}} #--source "BoardGamesArtifacts" --api-key whatever --skip-duplicate
       - uses: actions/upload-artifact@v2
         with:
           path: Nugets/*
