@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.9](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.8...v1.1.0-release-candidate.9) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Actions:** Change sql ([d351e9e](https://github.com/mrtaler/RolePlayedGamesHelper/commit/d351e9e3f9f4fe218ad8eb81539dac416728e254))
+
 # [1.1.0-release-candidate.8](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.7...v1.1.0-release-candidate.8) (2020-10-14)
 
 
