@@ -80,7 +80,7 @@ jobs:
         run: dotnet test --configuration Release --no-build --nologo --verbosity normal --collect:"XPlat Code Coverage"
       - uses: codecov/codecov-action@v1
       - name: Publish windows version
-        run: dotnet nuget push .\Nugets\* --source "BoardGamesArtifacts" --api-key whatever --skip-duplicate
+        run: dotnet nuget push --source "BoardGamesArtifacts" --api-key az .\Nugets\* --skip-duplicate
       - uses: actions/upload-artifact@v2
         with:
           path: Nugets/*
