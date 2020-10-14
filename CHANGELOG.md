@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.4](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.3...v1.1.0-release-candidate.4) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Test:** r ([691c0b5](https://github.com/mrtaler/RolePlayedGamesHelper/commit/691c0b5e5b847e64baaf9bdf66ea64f583c3f8fe))
+
+        ### Miscellaneous
+
+* fix(Test):Changed launch settings conditions ([abd9992](https://github.com/mrtaler/RolePlayedGamesHelper/commit/abd999239738cb384f0fcaf4c6193c52699b08eb))
+
 # [1.1.0-release-candidate.3](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.2...v1.1.0-release-candidate.3) (2020-10-14)
 
 
