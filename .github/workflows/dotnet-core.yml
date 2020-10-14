@@ -102,9 +102,13 @@ jobs:
       #- name: Publish windows version        
       #  run: dotnet nuget push $GITHUB_WORKSPACE/Nugets/RolePlayedGamesHelper* --source "BoardGamesArtifacts" --api-key whatever --skip-duplicate
       - name: 'Dotnet NuGet Push'
+      #  run: |
+      #    Get-ChildItem $GITHUB_WORKSPACE/Nugets/ -Filter *.nupkg |
+      #    Where-Object { $_.Name.Contains('RolePlayedGamesHelper') } |
+      #    ForEach-Object { dotnet nuget push $_ --source "BoardGamesArtifacts" --api-key whatever --skip-duplicate }          
         run: |
           Get-ChildItem $GITHUB_WORKSPACE/Nugets/ -Filter *.nupkg |
-          Where-Object { $_.Name.Contains('RolePlayedGamesHelper') } |
+          Where-Object { case  $_.Name in *'RolePlayedGamesHelper'* } |
           ForEach-Object { dotnet nuget push $_ --source "BoardGamesArtifacts" --api-key whatever --skip-duplicate }          
       - uses: actions/upload-artifact@v2
         with:
