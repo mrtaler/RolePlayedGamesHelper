@@ -5,8 +5,11 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFiles", "{E2590C73-0AD4-4F0A-B944-28812AAE5388}"
 	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		GA.Build.targets = GA.Build.targets
 		local-build.ps1 = local-build.ps1
 		NuGet.Config = NuGet.Config
+		Nuget.Default.props = Nuget.Default.props
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -37,25 +40,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{C32981A9-AB77-4343-A6CB-DAC109ED4E6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Repository", "src\RolePlayedGamesHelper.Repository\RolePlayedGamesHelper.Repository.csproj", "{E829FBF9-38E5-4BAD-861C-65A282886878}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository", "src\RolePlayedGamesHelper.Repository\RolePlayedGamesHelper.Repository.csproj", "{E829FBF9-38E5-4BAD-861C-65A282886878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Repository.AzureTableRepository", "src\RolePlayedGamesHelper.Repository.AzureTableRepository\RolePlayedGamesHelper.Repository.AzureTableRepository.csproj", "{B0688B29-E942-48C5-9584-12684AF588D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository.AzureTableRepository", "src\RolePlayedGamesHelper.Repository.AzureTableRepository\RolePlayedGamesHelper.Repository.AzureTableRepository.csproj", "{B0688B29-E942-48C5-9584-12684AF588D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Repository.EntityFramework", "src\RolePlayedGamesHelper.Repository.EntityFramework\RolePlayedGamesHelper.Repository.EntityFramework.csproj", "{FA31F224-4B00-4A49-8E07-0AED59672F00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository.EntityFramework", "src\RolePlayedGamesHelper.Repository.EntityFramework\RolePlayedGamesHelper.Repository.EntityFramework.csproj", "{FA31F224-4B00-4A49-8E07-0AED59672F00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Repository.EntityFrameworkCore", "src\RolePlayedGamesHelper.Repository.EntityFrameworkCore\RolePlayedGamesHelper.Repository.EntityFrameworkCore.csproj", "{50A5DD80-C9B1-41ED-937F-CA63F688A969}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository.EntityFrameworkCore", "src\RolePlayedGamesHelper.Repository.EntityFrameworkCore\RolePlayedGamesHelper.Repository.EntityFrameworkCore.csproj", "{50A5DD80-C9B1-41ED-937F-CA63F688A969}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Repository.MongoDb", "src\RolePlayedGamesHelper.Repository.MongoDb\RolePlayedGamesHelper.Repository.MongoDb.csproj", "{89CE2544-D088-4826-9CFD-BDFA84264539}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository.MongoDb", "src\RolePlayedGamesHelper.Repository.MongoDb\RolePlayedGamesHelper.Repository.MongoDb.csproj", "{89CE2544-D088-4826-9CFD-BDFA84264539}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Repository.RavenDb", "src\RolePlayedGamesHelper.Repository.RavenDb\RolePlayedGamesHelper.Repository.RavenDb.csproj", "{7D81A2B6-46CD-4A12-95CF-13D9A02A00C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository.RavenDb", "src\RolePlayedGamesHelper.Repository.RavenDb\RolePlayedGamesHelper.Repository.RavenDb.csproj", "{7D81A2B6-46CD-4A12-95CF-13D9A02A00C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Repository.Xml", "src\RolePlayedGamesHelper.Repository.Xml\RolePlayedGamesHelper.Repository.Xml.csproj", "{69DB1EAC-C72F-4F69-89A5-85767160A34F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository.Xml", "src\RolePlayedGamesHelper.Repository.Xml\RolePlayedGamesHelper.Repository.Xml.csproj", "{69DB1EAC-C72F-4F69-89A5-85767160A34F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7534805B-0B63-43CF-9E9B-4E3085E94CDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Repository.UnitTests", "test\RolePlayedGamesHelper.Repository.UnitTests\RolePlayedGamesHelper.Repository.UnitTests.csproj", "{9557F5E4-6E62-4105-82C0-EE49780217D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository.UnitTests", "test\RolePlayedGamesHelper.Repository.UnitTests\RolePlayedGamesHelper.Repository.UnitTests.csproj", "{9557F5E4-6E62-4105-82C0-EE49780217D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Repository.IntegrationTests", "test\RolePlayedGamesHelper.Repository.IntegrationTests\RolePlayedGamesHelper.Repository.IntegrationTests.csproj", "{9457B760-5F19-4FCF-8EFA-DD5EB073C02C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository.IntegrationTests", "test\RolePlayedGamesHelper.Repository.IntegrationTests\RolePlayedGamesHelper.Repository.IntegrationTests.csproj", "{9457B760-5F19-4FCF-8EFA-DD5EB073C02C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
