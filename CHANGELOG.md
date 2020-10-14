@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-feature-develop.3](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-feature-develop.2...v1.1.0-feature-develop.3) (2020-10-14)
+
+
+        ### Performance Improvements
+
+* **pencil:** remove graphiteWidth option ([3b03a6b](https://github.com/mrtaler/RolePlayedGamesHelper/commit/3b03a6bee8923fc896d6f44b61622093ea3d4815))
+
+        ### Miscellaneous
+
+* fix(Test):Changed tests ([38fba5a](https://github.com/mrtaler/RolePlayedGamesHelper/commit/38fba5a1dc1789698a58b858aaa237e28b0957c5))* feat(Repository):Added EF repository ([2d239b3](https://github.com/mrtaler/RolePlayedGamesHelper/commit/2d239b3dc40a384e9ee2414024e91e186121ef6c))* Merge branch 'feature/GeneralRepository' of github.com:mrtaler/RolePlayedGamesHelper into feature/GeneralRepository ([97b70fd](https://github.com/mrtaler/RolePlayedGamesHelper/commit/97b70fd4b4746a6f544d032b23172a147741bcea))* **Test:** fixed tests ([b9a7741](https://github.com/mrtaler/RolePlayedGamesHelper/commit/b9a774127f26c494806861b4a18956cd483df2d4))
+
 # [1.1.0-feature-develop.2](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-feature-develop.1...v1.1.0-feature-develop.2) (2020-10-13)
 
 
