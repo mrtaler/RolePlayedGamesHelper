@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.15](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.14...v1.1.0-release-candidate.15) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Actions:** data fis ([33e625b](https://github.com/mrtaler/RolePlayedGamesHelper/commit/33e625b6471e71984ce79007746bdca211dc68a1))
+
+        ### Miscellaneous
+
+* Update NuGet.Config ([f2919ae](https://github.com/mrtaler/RolePlayedGamesHelper/commit/f2919ae75243c34fb361a69692f7a1f64a94db63))
+
 # [1.1.0-release-candidate.14](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.13...v1.1.0-release-candidate.14) (2020-10-14)
 
 
