@@ -18,6 +18,7 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Common
             var       reader  = new JsonTextReader(file);
             var       jObject = JObject.Load(reader);
 
+
             var variables = jObject
                             .GetValue("profiles")
                             //select a proper profile here
