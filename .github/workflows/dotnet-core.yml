@@ -49,7 +49,7 @@ jobs:
           echo ${{ steps.semantic.outputs.new_release_patch_version }}
   release:
     needs: [semantic-version]
-    if:  ${{ needs.semantic-version.outputs.output1 == 'true' }} 
+   # if:  ${{ needs.semantic-version.outputs.output1 == 'true' }} 
     runs-on: windows-latest
     env:
       DOTNET_NOLOGO: true
