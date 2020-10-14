@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.17](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.16...v1.1.0-release-candidate.17) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Actions:** dta changes ([eb93e90](https://github.com/mrtaler/RolePlayedGamesHelper/commit/eb93e90c2d8a4ed121fabd2a6085f01858982f13))
+
 # [1.1.0-release-candidate.16](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.15...v1.1.0-release-candidate.16) (2020-10-14)
 
 
