@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.14](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.13...v1.1.0-release-candidate.14) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Actions:** fix api key ([2ce1331](https://github.com/mrtaler/RolePlayedGamesHelper/commit/2ce1331e411d455d7c2219ad81a9f5ff58a9df12))
+
 # [1.1.0-release-candidate.13](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.12...v1.1.0-release-candidate.13) (2020-10-14)
 
 
