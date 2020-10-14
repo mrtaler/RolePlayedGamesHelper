@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.5](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.4...v1.1.0-release-candidate.5) (2020-10-14)
+
+
+        ### Miscellaneous
+
+* Merge branch 'develop' of github.com:mrtaler/RolePlayedGamesHelper into develop ([602dbcd](https://github.com/mrtaler/RolePlayedGamesHelper/commit/602dbcde452b26894d3a4935c1964b92b03df7b3))
+
+        ### Bug Fixes
+
+* **Test:** add loger ([81e80b2](https://github.com/mrtaler/RolePlayedGamesHelper/commit/81e80b24c2dc007d93a08a8570bad16836a3755f))
+
 # [1.1.0-release-candidate.4](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.3...v1.1.0-release-candidate.4) (2020-10-14)
 
 
