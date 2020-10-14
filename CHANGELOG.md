@@ -1,5 +1,12 @@
 # Project Changelog
 
+## [1.0.2](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.0.1...v1.0.2) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **nuget:** add img ([a8dd4d5](https://github.com/mrtaler/RolePlayedGamesHelper/commit/a8dd4d578a8aeed879e9aab74bd20617b751407d))
+
 ## [1.0.1](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.0.0...v1.0.1) (2020-10-14)
 
 
