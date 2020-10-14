@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.24](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.23...v1.1.0-release-candidate.24) (2020-10-14)
+
+
+        ### Features
+
+* **Nuget:** Change nuget setings ([2e0c064](https://github.com/mrtaler/RolePlayedGamesHelper/commit/2e0c06433db9457bcc43b45fdec671ed9874c57f))
+
 # [1.1.0-release-candidate.23](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.22...v1.1.0-release-candidate.23) (2020-10-14)
 
 
