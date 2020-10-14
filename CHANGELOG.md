@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.8](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.7...v1.1.0-release-candidate.8) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Actions:** change password for mssql container ([6ccb8e6](https://github.com/mrtaler/RolePlayedGamesHelper/commit/6ccb8e69b5a0951d634b5059367736ede49138ca))
+
 # [1.1.0-release-candidate.7](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.6...v1.1.0-release-candidate.7) (2020-10-14)
 
 
