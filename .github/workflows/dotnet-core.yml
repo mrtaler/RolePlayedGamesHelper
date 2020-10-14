@@ -57,6 +57,15 @@ jobs:
       GITHUB_TOKEN: ${{secrets.GIT_ARTIFACT_TOKEN}}
       AZURE_ARTIFACTS_PAT: ${{secrets.AZURE_ARTIFACTS_PAT}}
       NUGET_VERSION: ${{ needs.semantic-version.outputs.output2 }}
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        environment:
+          - MSSQL_PID=Express
+          - ACCEPT_EULA=Y
+          - SA_PASSWORD=MyPassword!
+        ports:
+          - 1433:1433
     steps:
       - run: echo ${{needs.semantic-version.outputs.output1}} ${{needs.semantic-version.outputs.output2}} 
       - name: Checkout
@@ -76,6 +85,8 @@ jobs:
       - name: Build
         run: dotnet build  --configuration Release --no-restore /p:Version=${{needs.semantic-version.outputs.output2}}
       - name: Test
+        env:
+          mssql: "Data Source=sql,1433;Initial Catalog=Test;User=sa;Password=Passw0rd!;"          
         run: dotnet test --configuration Release --no-build --nologo --verbosity normal --collect:"XPlat Code Coverage"
       - uses: codecov/codecov-action@v1
       - name: Publish windows version

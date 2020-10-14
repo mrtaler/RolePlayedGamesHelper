@@ -1,6 +1,8 @@
+using System;
 using System.Data.Common;
 using System.Data.SqlClient;
 using Autofac;
+using Microsoft.VisualStudio.TestPlatform.CoreUtilities.Helpers;
 using RolePlayedGamesHelper.Repository.EntityFramework;
 using RolePlayedGamesHelper.Repository.EntityFrameworkCore;
 using RolePlayedGamesHelper.Repository.IntegrationTests.Common;
@@ -18,7 +20,8 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules
                         {
                             var db = new SqlConnection();
                             //  db.ConnectionString = $"Data Source={EfDataDirectoryFactory.Build()}";
-                            db.ConnectionString = $"Data Source=EPBYGOMW0360\\MSSQL_360;Integrated Security=True;Initial Catalog=Test;";
+                            var connSring = Environment.GetEnvironmentVariable("mssql");
+                            db.ConnectionString = Environment.GetEnvironmentVariable("mssql"); ;
                             return db;
                         })
               .As<DbConnection>()

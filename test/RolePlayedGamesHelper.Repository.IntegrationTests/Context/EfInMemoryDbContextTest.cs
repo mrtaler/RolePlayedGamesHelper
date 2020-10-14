@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using RolePlayedGamesHelper.Repository.EntityFramework;
 using RolePlayedGamesHelper.Repository.EntityFrameworkCore;
+using RolePlayedGamesHelper.Repository.IntegrationTests.Common;
 using RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects.Assert;
@@ -15,7 +16,8 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
 
         public EfInMemoryDbContextTest()
         {
-            var buider = new ContainerBuilder();
+            new LaunchSettingsFixture();
+               var buider = new ContainerBuilder();
             buider.RegisterModule<ContextEfTestModule>();
             container = buider.Build();
 
