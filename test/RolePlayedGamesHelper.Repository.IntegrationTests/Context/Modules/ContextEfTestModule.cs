@@ -19,8 +19,8 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules
               .Register((c) =>
                         {
                             var db = new SqlConnection();
+                            Console.WriteLine(Environment.GetEnvironmentVariable("mssql"));
                             //  db.ConnectionString = $"Data Source={EfDataDirectoryFactory.Build()}";
-                            var connSring = Environment.GetEnvironmentVariable("mssql");
                             db.ConnectionString = Environment.GetEnvironmentVariable("mssql"); ;
                             return db;
                         })
