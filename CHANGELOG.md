@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.7](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.6...v1.1.0-release-candidate.7) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Repo:** add db creator ([8e7fa50](https://github.com/mrtaler/RolePlayedGamesHelper/commit/8e7fa50f0ecf040e270e695100d1fc97c1eecf60))
+
 # [1.1.0-release-candidate.6](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.5...v1.1.0-release-candidate.6) (2020-10-14)
 
 
