@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.13](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.12...v1.1.0-release-candidate.13) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Actions:** Add new step for set nuget api key ([80997f4](https://github.com/mrtaler/RolePlayedGamesHelper/commit/80997f45074593d5ff5d8c594732b6d3e804b029))
+
 # [1.1.0-release-candidate.12](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.11...v1.1.0-release-candidate.12) (2020-10-14)
 
 
