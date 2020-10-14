@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.31](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.30...v1.1.0-release-candidate.31) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **nuget:** change mask ([24e648c](https://github.com/mrtaler/RolePlayedGamesHelper/commit/24e648cef3d9e0609bfacf4a277c0fe76140bd0a))
+
 # [1.1.0-release-candidate.30](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.29...v1.1.0-release-candidate.30) (2020-10-14)
 
 
