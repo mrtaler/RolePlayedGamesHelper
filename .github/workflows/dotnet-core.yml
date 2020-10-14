@@ -50,7 +50,7 @@ jobs:
   release:
     needs: [semantic-version]
    # if:  ${{ needs.semantic-version.outputs.output1 == 'true' }} 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest #windows-latest
     env:
       DOTNET_NOLOGO: true
       DOTNET_CLI_TELEMETRY_OPTOUT: true     
