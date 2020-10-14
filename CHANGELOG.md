@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.10](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.9...v1.1.0-release-candidate.10) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Actions:** Fix docker ([a3425ae](https://github.com/mrtaler/RolePlayedGamesHelper/commit/a3425aeb5b1085e040c7d65e73f0f2819e3276c8))
+
 # [1.1.0-release-candidate.9](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.8...v1.1.0-release-candidate.9) (2020-10-14)
 
 
