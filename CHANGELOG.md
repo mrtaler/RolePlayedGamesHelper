@@ -1,5 +1,16 @@
 # Project Changelog
 
+## [1.0.1](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.0.0...v1.0.1) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Nuget:** changed defaul push package ([725235b](https://github.com/mrtaler/RolePlayedGamesHelper/commit/725235b2b608754d571ae8f67ab1ea32a300b879))
+
+        ### Miscellaneous
+
+* Update NuGet.Config ([1f54b14](https://github.com/mrtaler/RolePlayedGamesHelper/commit/1f54b14b21421fe35a48af886833a27b5b05eeac))
+
 # 1.0.0 (2020-09-28)
 
 
