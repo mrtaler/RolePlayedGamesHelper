@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.3](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.2...v1.1.0-release-candidate.3) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Git Actions:** Fixed step names ([4d88023](https://github.com/mrtaler/RolePlayedGamesHelper/commit/4d88023a4fcd5882e4f2823b8c4eeb88ee96aa2a))
+
+        ### Miscellaneous
+
+* Merge pull request #2 from mrtaler/master ([cd7152b](https://github.com/mrtaler/RolePlayedGamesHelper/commit/cd7152b0875358fb959d9c95a60d7a5bdc41f8f5)), closes [#2](https://github.com/mrtaler/RolePlayedGamesHelper/issues/2)* Update NuGet.Config ([1f54b14](https://github.com/mrtaler/RolePlayedGamesHelper/commit/1f54b14b21421fe35a48af886833a27b5b05eeac))* Update dotnet-core.yml ([634f901](https://github.com/mrtaler/RolePlayedGamesHelper/commit/634f9016f447d4ea49b071b224a95dcba1c4255d))* Update dotnet-core.yml ([d8ba2f0](https://github.com/mrtaler/RolePlayedGamesHelper/commit/d8ba2f02bce136123dd5bfde380bbe70f814649b))* Update dotnet-core.yml ([4251a94](https://github.com/mrtaler/RolePlayedGamesHelper/commit/4251a9420aee3a9a37093fdab41c54d646634fea))* try to use docker sql ([eecadbc](https://github.com/mrtaler/RolePlayedGamesHelper/commit/eecadbcd2c5f8ccc3a098fa0c4b29b64c2b4760a))
+
 # [1.1.0-release-candidate.2](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.1...v1.1.0-release-candidate.2) (2020-10-14)
 
 
