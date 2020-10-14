@@ -59,7 +59,7 @@ jobs:
       AZURE_ARTIFACTS_PAT: ${{secrets.AZURE_ARTIFACTS_PAT}}
       NUGET_VERSION: ${{ needs.semantic-version.outputs.output2 }}
     services:
-      sqlserver:      
+      mssql:      
         image: mcr.microsoft.com/mssql/server:2019-latest       
         env:
           ACCEPT_EULA: Y
@@ -82,6 +82,8 @@ jobs:
           dotnet-version: 3.1.x
       - name: Update nuget sources
         run: nuget sources update -Name "BoardGamesArtifacts" -Username 'Siarhei Linkevich' -Password ${{secrets.AZURE_ARTIFACTS_PAT}}
+      - name: Create MS SQL Database
+        run: docker exec -i mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'MyPassword!' -Q 'CREATE DATABASE Test'
       - name: Install dependencies
         run: |
           dotnet restore 
@@ -92,7 +94,7 @@ jobs:
         run: dotnet build  --configuration Release --no-restore /p:Version=${{needs.semantic-version.outputs.output2}}
       - name: Test
         env:
-          mssql: "Data Source=sqlserver,1433;Initial Catalog=Test;User=sa;Password=MyPassword!;"          
+          mssql: "Data Source=localhost,1433;Initial Catalog=Test;User=sa;Password=MyPassword!;"          
         run: dotnet test --configuration Release --no-build --nologo --verbosity normal --collect:"XPlat Code Coverage"
       - uses: codecov/codecov-action@v1
       - name: Publish windows version
