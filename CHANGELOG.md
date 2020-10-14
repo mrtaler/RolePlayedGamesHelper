@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.22](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.21...v1.1.0-release-candidate.22) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **nuget:** change nuget push source ([879e2a9](https://github.com/mrtaler/RolePlayedGamesHelper/commit/879e2a91a778247639faa372e12bf60a68c74a22))
+
 # [1.1.0-release-candidate.21](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.20...v1.1.0-release-candidate.21) (2020-10-14)
 
 
