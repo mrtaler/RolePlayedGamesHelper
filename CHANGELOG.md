@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.26](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.25...v1.1.0-release-candidate.26) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **nuget:** changed auth ([da5eaf4](https://github.com/mrtaler/RolePlayedGamesHelper/commit/da5eaf462b7390771d05ea56177dbd4f40f2cd59))
+
 # [1.1.0-release-candidate.25](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.24...v1.1.0-release-candidate.25) (2020-10-14)
 
 
