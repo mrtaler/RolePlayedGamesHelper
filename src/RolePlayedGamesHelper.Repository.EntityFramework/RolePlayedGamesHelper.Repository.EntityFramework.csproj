@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <UseFxCopAnalyzers>false</UseFxCopAnalyzers>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RolePlayedGamesHelper.Repository\RolePlayedGamesHelper.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
