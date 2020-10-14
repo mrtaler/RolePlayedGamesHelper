@@ -1,5 +1,12 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.29](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.28...v1.1.0-release-candidate.29) (2020-10-14)
+
+
+        ### Bug Fixes
+
+* **Nuget:** change location ([269b3f8](https://github.com/mrtaler/RolePlayedGamesHelper/commit/269b3f830ea27ee4d0255a98cf2315d919072c93))
+
 # [1.1.0-release-candidate.28](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.27...v1.1.0-release-candidate.28) (2020-10-14)
 
 
