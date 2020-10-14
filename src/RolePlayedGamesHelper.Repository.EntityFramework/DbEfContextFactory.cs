@@ -25,7 +25,7 @@ namespace RolePlayedGamesHelper.Repository.EntityFramework
         public TContext GetContext()
         {
             context ??= Activator.CreateInstance(typeof(TContext), BindingFlags.Default, null, new object[] { options }, null, null) as TContext;
-            // _context?.Database.EnsureCreated();
+            context?.Database.CreateIfNotExists();
             return context;
         }
     }
