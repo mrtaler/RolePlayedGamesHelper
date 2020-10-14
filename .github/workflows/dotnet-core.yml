@@ -43,10 +43,7 @@ jobs:
         run: |
           echo "::set-output  name=isPublished::${{ steps.semantic.outputs.new_release_published }}
           echo "::set-output  name=newReleaseVersion::${{ steps.semantic.outputs.new_release_version }}
-          echo ${{ steps.semantic.outputs.new_release_version }}
-          echo ${{ steps.semantic.outputs.new_release_major_version }}
-          echo ${{ steps.semantic.outputs.new_release_minor_version }}
-          echo ${{ steps.semantic.outputs.new_release_patch_version }}
+          echo ${{ steps.semantic.outputs.new_release_version }}         
   release:
     name: "Publish to Github Package Registry"
     needs: [semantic-version]
