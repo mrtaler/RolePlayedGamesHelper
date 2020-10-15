@@ -106,10 +106,7 @@ jobs:
       #    Get-ChildItem $GITHUB_WORKSPACE/Nugets/ -Filter *.nupkg |
       #    Where-Object { $_.Name.Contains('RolePlayedGamesHelper') } |
       #    ForEach-Object { dotnet nuget push $_ --source "BoardGamesArtifacts" --api-key whatever --skip-duplicate }          
-        run: |
-          find $GITHUB_WORKSPACE/Nugets/ -type f -name 'RolePlayedGamesHelper.*.nupkg' | while read FILE ; do |
-          dotnet nuget push ${FILE} --source "BoardGamesArtifacts" --api-key whatever --skip-duplicate         
-          done           
+        run: find $GITHUB_WORKSPACE/Nugets/ -type f -name 'RolePlayedGamesHelper.*.nupkg' | while read FILE ; do | dotnet nuget push ${FILE} --source "BoardGamesArtifacts" --api-key whatever --skip-duplicate done
       - uses: actions/upload-artifact@v2
         with:
           path: Nugets/*
