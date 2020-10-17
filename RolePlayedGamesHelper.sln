@@ -60,6 +60,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repos
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository.IntegrationTests", "test\RolePlayedGamesHelper.Repository.IntegrationTests\RolePlayedGamesHelper.Repository.IntegrationTests.csproj", "{9457B760-5F19-4FCF-8EFA-DD5EB073C02C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CQRS", "CQRS", "{5C80A77F-A055-4F73-868F-F9A06B06CA49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Cqrs.Kledex", "src\RolePlayedGamesHelper.Cqrs.Kledex\RolePlayedGamesHelper.Cqrs.Kledex.csproj", "{FD51D0D4-859C-4604-B712-5F1310789D65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Cqrs.Kledex.Validation.FluentValidation", "src\RolePlayedGamesHelper.Cqrs.Kledex.Validation.FluentValidation\RolePlayedGamesHelper.Cqrs.Kledex.Validation.FluentValidation.csproj", "{010EEF33-6693-4AB2-B795-9925A240C899}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,6 +108,14 @@ Global
 		{9457B760-5F19-4FCF-8EFA-DD5EB073C02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9457B760-5F19-4FCF-8EFA-DD5EB073C02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9457B760-5F19-4FCF-8EFA-DD5EB073C02C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD51D0D4-859C-4604-B712-5F1310789D65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD51D0D4-859C-4604-B712-5F1310789D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD51D0D4-859C-4604-B712-5F1310789D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD51D0D4-859C-4604-B712-5F1310789D65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{010EEF33-6693-4AB2-B795-9925A240C899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{010EEF33-6693-4AB2-B795-9925A240C899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{010EEF33-6693-4AB2-B795-9925A240C899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{010EEF33-6693-4AB2-B795-9925A240C899}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +134,8 @@ Global
 		{7534805B-0B63-43CF-9E9B-4E3085E94CDA} = {C32981A9-AB77-4343-A6CB-DAC109ED4E6F}
 		{9557F5E4-6E62-4105-82C0-EE49780217D6} = {7534805B-0B63-43CF-9E9B-4E3085E94CDA}
 		{9457B760-5F19-4FCF-8EFA-DD5EB073C02C} = {7534805B-0B63-43CF-9E9B-4E3085E94CDA}
+		{FD51D0D4-859C-4604-B712-5F1310789D65} = {5C80A77F-A055-4F73-868F-F9A06B06CA49}
+		{010EEF33-6693-4AB2-B795-9925A240C899} = {5C80A77F-A055-4F73-868F-F9A06B06CA49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00F53228-D583-4063-881D-E60E058EDABC}
