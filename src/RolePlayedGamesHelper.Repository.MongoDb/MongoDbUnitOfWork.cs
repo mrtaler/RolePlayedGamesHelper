@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using MongoDB.Driver;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
@@ -8,13 +6,11 @@ namespace RolePlayedGamesHelper.Repository.MongoDb
 {
     public class MongoDbUnitOfWork : UnitOfWorkBase<IMongoClient, MongoDbContextFactory>
     {
-        private bool _isDisposed;
-        private readonly IMongoDatabase _mongoDbDatabase;
+        private bool isDisposed;
 
         public MongoDbUnitOfWork(MongoDbConfiguration configuration)
         {
             DataContextFactory = new MongoDbContextFactory(configuration);
-            _mongoDbDatabase = DataContextFactory.GetContext().GetDatabase(configuration.DatabaseName);
         }
         /// <inheritdoc />
         public override MongoDbContextFactory DataContextFactory { get; }
@@ -50,7 +46,7 @@ namespace RolePlayedGamesHelper.Repository.MongoDb
         // Protected implementation of Dispose pattern.
         private void Dispose(bool disposing)
         {
-            if (_isDisposed)
+            if (isDisposed)
                 return;
 
             if (disposing)
@@ -59,7 +55,7 @@ namespace RolePlayedGamesHelper.Repository.MongoDb
             }
             // Free any unmanaged objects here.
             //
-            _isDisposed = true;
+            isDisposed = true;
         }
         ~MongoDbUnitOfWork()
         {

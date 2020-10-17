@@ -56,17 +56,17 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching.Hash
                 return this.Visit(exp);
             }
 
-            public override Expression Visit(Expression exp)
+            public override Expression Visit(Expression node)
             {
-                if (exp == null)
+                if (node == null)
                 {
                     return null;
                 }
-                if (this.candidates.Contains(exp))
+                if (this.candidates.Contains(node))
                 {
-                    return this.Evaluate(exp);
+                    return this.Evaluate(node);
                 }
-                return base.Visit(exp);
+                return base.Visit(node);
             }
 
             private Expression Evaluate(Expression e)
@@ -104,18 +104,18 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching.Hash
                 return this.candidates;
             }
 
-            public override Expression Visit(Expression expression)
+            public override Expression Visit(Expression node)
             {
-                if (expression != null)
+                if (node != null)
                 {
                     bool saveCannotBeEvaluated = this.cannotBeEvaluated;
                     this.cannotBeEvaluated = false;
-                    base.Visit(expression);
+                    base.Visit(node);
                     if (!this.cannotBeEvaluated)
                     {
-                        if (this.fnCanBeEvaluated(expression))
+                        if (this.fnCanBeEvaluated(node))
                         {
-                            this.candidates.Add(expression);
+                            this.candidates.Add(node);
                         }
                         else
                         {
@@ -124,7 +124,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching.Hash
                     }
                     this.cannotBeEvaluated |= saveCannotBeEvaluated;
                 }
-                return expression;
+                return node;
             }
         }
     }
