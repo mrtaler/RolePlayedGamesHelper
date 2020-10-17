@@ -1,5 +1,15 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.38](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.37...v1.1.0-release-candidate.38) (2020-10-17)
+
+
+        ### Miscellaneous
+
+* Merge branch 'master' into develop ([cdca985](https://github.com/mrtaler/RolePlayedGamesHelper/commit/cdca985e05dd2316da8cb5f095d7152ed7e9bbbb))* **version:** Release 1.0.1 ([3f2f564](https://github.com/mrtaler/RolePlayedGamesHelper/commit/3f2f5644b514fc0da9315a35760422266c346d01))* **version:** Release 1.0.2 ([b9c0fb5](https://github.com/mrtaler/RolePlayedGamesHelper/commit/b9c0fb58e8fce077ae0f50975e98ab8b894fd7b7))
+
+        ### Bug Fixes
+
+* **nuget:** add img ([a8dd4d5](https://github.com/mrtaler/RolePlayedGamesHelper/commit/a8dd4d578a8aeed879e9aab74bd20617b751407d))* **Nuget:** changed defaul push package ([725235b](https://github.com/mrtaler/RolePlayedGamesHelper/commit/725235b2b608754d571ae8f67ab1ea32a300b879))
 
 # [1.1.0-release-candidate.37](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.36...v1.1.0-release-candidate.37) (2020-10-17)
 
