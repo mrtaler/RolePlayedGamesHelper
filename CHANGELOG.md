@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.37](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.36...v1.1.0-release-candidate.37) (2020-10-17)
+
+
+        ### Performance Improvements
+
+* **Sonar:** add sonar scaner ([560a28b](https://github.com/mrtaler/RolePlayedGamesHelper/commit/560a28b25c06701a4ea72da306ac4d1d7f1bc81b))
+
+        ### Miscellaneous
+
+* fix conditions ([9df8cd7](https://github.com/mrtaler/RolePlayedGamesHelper/commit/9df8cd70006833c3270246f13ff841f3b030009e))
+
 # [1.1.0-release-candidate.36](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.35...v1.1.0-release-candidate.36) (2020-10-15)
 
 
