@@ -16,3 +16,8 @@ https://github.com/StefH/GitHubReleaseNotes
  
  fix: change file
 
+---
+### mongo db
+docker run -d  -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password -e MONGO_INITDB_DATABASE=TestMongoDB   -p 27017:27017   --name some-mongo   mongo:latest
+mongo --username admin --password password
+

@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$(SolutionDir)\Nuget.Default.props" />
+  <PropertyGroup>
+    <UseFxCopAnalyzers>false</UseFxCopAnalyzers>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="SharpRepository\" />
+  </ItemGroup>
+
+</Project>
