@@ -77,7 +77,7 @@ namespace RolePlayedGamesHelper.Repository.EntityFramework.SharpRepository
             GC.SuppressFinalize(this);
         }
 
-        protected virtual void Dispose(bool disposing)
+        protected void Dispose(bool disposing)
         {
             if (!disposing) return;
             if (Context == null) return;
