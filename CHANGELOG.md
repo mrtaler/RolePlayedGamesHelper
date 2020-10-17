@@ -1,5 +1,6 @@
 # Project Changelog
 
+
 # [1.1.0-release-candidate.37](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.36...v1.1.0-release-candidate.37) (2020-10-17)
 
 
@@ -157,15 +158,24 @@
 
 # [1.1.0-release-candidate.16](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.15...v1.1.0-release-candidate.16) (2020-10-14)
 
+## [1.0.2](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.0.1...v1.0.2) (2020-10-14)
+
+
 
         ### Bug Fixes
+
 
 * **Actions:** Data fix ([9ace47d](https://github.com/mrtaler/RolePlayedGamesHelper/commit/9ace47d654a36c418fc43262cdceb1255ca7d89f))
 
 # [1.1.0-release-candidate.15](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.14...v1.1.0-release-candidate.15) (2020-10-14)
 
+* **nuget:** add img ([a8dd4d5](https://github.com/mrtaler/RolePlayedGamesHelper/commit/a8dd4d578a8aeed879e9aab74bd20617b751407d))
+
+## [1.0.1](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.0.0...v1.0.1) (2020-10-14)
+
 
         ### Bug Fixes
+
 
 * **Actions:** data fis ([33e625b](https://github.com/mrtaler/RolePlayedGamesHelper/commit/33e625b6471e71984ce79007746bdca211dc68a1))
 
@@ -331,6 +341,13 @@
         ### Features
 
 * initial commit for dev branch ([a8ad6e2](https://github.com/mrtaler/RolePlayedGamesHelper/commit/a8ad6e23824f6309848a9ca24d8b7f5c88f71631))
+
+* **Nuget:** changed defaul push package ([725235b](https://github.com/mrtaler/RolePlayedGamesHelper/commit/725235b2b608754d571ae8f67ab1ea32a300b879))
+
+        ### Miscellaneous
+
+* Update NuGet.Config ([1f54b14](https://github.com/mrtaler/RolePlayedGamesHelper/commit/1f54b14b21421fe35a48af886833a27b5b05eeac))
+
 
 # 1.0.0 (2020-09-28)
 
