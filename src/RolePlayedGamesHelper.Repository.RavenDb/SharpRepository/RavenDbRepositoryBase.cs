@@ -6,7 +6,6 @@ using Raven.Client.Documents.Session;
 using RolePlayedGamesHelper.Repository.SharpRepository;
 using RolePlayedGamesHelper.Repository.SharpRepository.Caching;
 using RolePlayedGamesHelper.Repository.SharpRepository.FetchStrategies;
-using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 using RolePlayedGamesHelper.Repository.SharpRepository.Queries;
 using RolePlayedGamesHelper.Repository.SharpRepository.Specifications;
 

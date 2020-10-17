@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Reflection;
-using System.Text;
-
 using RolePlayedGamesHelper.Repository.EntityFramework.SharpRepository;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 

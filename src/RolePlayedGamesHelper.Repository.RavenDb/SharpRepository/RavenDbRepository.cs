@@ -1,7 +1,5 @@
-﻿using System;
-using Raven.Client.Documents.Session;
+﻿using Raven.Client.Documents.Session;
 using RolePlayedGamesHelper.Repository.SharpRepository.Caching;
-using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
 namespace RolePlayedGamesHelper.Repository.RavenDb.SharpRepository
 {

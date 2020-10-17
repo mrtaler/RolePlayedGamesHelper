@@ -12,7 +12,7 @@ namespace RolePlayedGamesHelper.Repository.Xml.SharpRepository
     public abstract class XmlRepositoryBase<T, TKey> : LinqRepositoryBase<T, TKey>, IXmlRepositoryBase
         where T : class, new()
     {
-        private List<T> _items = new List<T>();
+        private readonly List<T> items = new List<T>();
         private string storagePath;
 
         /// <summary>
@@ -22,11 +22,11 @@ namespace RolePlayedGamesHelper.Repository.Xml.SharpRepository
         /// <param name="cachingStrategy"></param>
         internal XmlRepositoryBase(List<T> items, string storagePath, ICachingStrategy<T, TKey> cachingStrategy = null) : base(cachingStrategy)
         {
-            _items           = items;
+            this.items           = items;
             this.storagePath = storagePath;
         }
 
-        public List<T> Items => _items;
+        public List<T> Items => items;
 
 
         protected override IQueryable<T> BaseQuery(IFetchStrategy<T> fetchStrategy = null)

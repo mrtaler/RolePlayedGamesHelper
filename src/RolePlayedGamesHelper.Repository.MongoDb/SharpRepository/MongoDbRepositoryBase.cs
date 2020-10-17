@@ -13,7 +13,6 @@ using RolePlayedGamesHelper.Repository.SharpRepository;
 using RolePlayedGamesHelper.Repository.SharpRepository.Caching;
 using RolePlayedGamesHelper.Repository.SharpRepository.FetchStrategies;
 using RolePlayedGamesHelper.Repository.SharpRepository.Helpers;
-using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 using RolePlayedGamesHelper.Repository.SharpRepository.Specifications;
 
 namespace RolePlayedGamesHelper.Repository.MongoDb.SharpRepository

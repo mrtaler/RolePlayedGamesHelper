@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using RolePlayedGamesHelper.Repository.SharpRepository.FetchStrategies;
-using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
 namespace RolePlayedGamesHelper.Repository.SharpRepository
 {

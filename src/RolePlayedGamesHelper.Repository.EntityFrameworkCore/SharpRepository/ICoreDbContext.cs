@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace RolePlayedGamesHelper.Repository.EntityFrameworkCore
+namespace RolePlayedGamesHelper.Repository.EntityFrameworkCore.SharpRepository
 {
     public interface ICoreDbContext : IDbContext
     {

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RolePlayedGamesHelper.Repository.SharpRepository.Ioc
 {

@@ -1,11 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using Autofac;
+using RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects.Assert;
-using RolePlayedGamesHelper.Repository.RavenDb;
 using RolePlayedGamesHelper.Repository.Xml;
 using Xunit;
 

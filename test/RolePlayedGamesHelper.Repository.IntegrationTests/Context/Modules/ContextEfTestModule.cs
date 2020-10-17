@@ -2,10 +2,7 @@ using System;
 using System.Data.Common;
 using System.Data.SqlClient;
 using Autofac;
-using Microsoft.VisualStudio.TestPlatform.CoreUtilities.Helpers;
 using RolePlayedGamesHelper.Repository.EntityFramework;
-using RolePlayedGamesHelper.Repository.EntityFrameworkCore;
-using RolePlayedGamesHelper.Repository.IntegrationTests.Common;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 

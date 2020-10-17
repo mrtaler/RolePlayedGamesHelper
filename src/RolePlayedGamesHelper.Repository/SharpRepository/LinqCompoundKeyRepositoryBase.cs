@@ -3,7 +3,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using RolePlayedGamesHelper.Repository.SharpRepository.Caching;
 using RolePlayedGamesHelper.Repository.SharpRepository.FetchStrategies;
-using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces.Repository;
 using RolePlayedGamesHelper.Repository.SharpRepository.Queries;
 using RolePlayedGamesHelper.Repository.SharpRepository.RepositoryBaseCompoundKey;

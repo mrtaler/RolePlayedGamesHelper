@@ -7,7 +7,6 @@ using RolePlayedGamesHelper.Repository.SharpRepository.Attributes;
 using RolePlayedGamesHelper.Repository.SharpRepository.Caching;
 using RolePlayedGamesHelper.Repository.SharpRepository.FetchStrategies;
 using RolePlayedGamesHelper.Repository.SharpRepository.Helpers;
-using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces.Repository;
 using RolePlayedGamesHelper.Repository.SharpRepository.Queries;
 using RolePlayedGamesHelper.Repository.SharpRepository.Specifications;

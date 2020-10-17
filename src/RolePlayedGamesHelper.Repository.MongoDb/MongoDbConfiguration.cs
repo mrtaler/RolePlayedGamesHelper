@@ -1,5 +1,4 @@
-﻿using System;
-using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
+﻿using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
 namespace RolePlayedGamesHelper.Repository.MongoDb
 {

@@ -1,9 +1,8 @@
 using Autofac;
-using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects;
+using RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects.Assert;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects.Mongo;
 using RolePlayedGamesHelper.Repository.MongoDb;
-using RolePlayedGamesHelper.Repository.RavenDb;
 using Xunit;
 
 namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context

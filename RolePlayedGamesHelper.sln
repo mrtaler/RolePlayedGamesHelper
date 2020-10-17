@@ -6,7 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFiles", "{E2590C73-0AD4-4F0A-B944-28812AAE5388}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
-		GA.Build.targets = GA.Build.targets
+		Directory.Build.targets = Directory.Build.targets
 		local-build.ps1 = local-build.ps1
 		NuGet.Config = NuGet.Config
 		Nuget.Default.props = Nuget.Default.props
@@ -60,6 +60,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repos
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository.IntegrationTests", "test\RolePlayedGamesHelper.Repository.IntegrationTests\RolePlayedGamesHelper.Repository.IntegrationTests.csproj", "{9457B760-5F19-4FCF-8EFA-DD5EB073C02C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository.InMemoryRepository", "src\RolePlayedGamesHelper.Repository.InMemoryRepository\RolePlayedGamesHelper.Repository.InMemoryRepository.csproj", "{E23B8187-1B1E-4970-BFDF-A0DA10A7E6C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,6 +104,10 @@ Global
 		{9457B760-5F19-4FCF-8EFA-DD5EB073C02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9457B760-5F19-4FCF-8EFA-DD5EB073C02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9457B760-5F19-4FCF-8EFA-DD5EB073C02C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E23B8187-1B1E-4970-BFDF-A0DA10A7E6C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E23B8187-1B1E-4970-BFDF-A0DA10A7E6C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E23B8187-1B1E-4970-BFDF-A0DA10A7E6C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E23B8187-1B1E-4970-BFDF-A0DA10A7E6C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +126,7 @@ Global
 		{7534805B-0B63-43CF-9E9B-4E3085E94CDA} = {C32981A9-AB77-4343-A6CB-DAC109ED4E6F}
 		{9557F5E4-6E62-4105-82C0-EE49780217D6} = {7534805B-0B63-43CF-9E9B-4E3085E94CDA}
 		{9457B760-5F19-4FCF-8EFA-DD5EB073C02C} = {7534805B-0B63-43CF-9E9B-4E3085E94CDA}
+		{E23B8187-1B1E-4970-BFDF-A0DA10A7E6C8} = {C32981A9-AB77-4343-A6CB-DAC109ED4E6F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00F53228-D583-4063-881D-E60E058EDABC}

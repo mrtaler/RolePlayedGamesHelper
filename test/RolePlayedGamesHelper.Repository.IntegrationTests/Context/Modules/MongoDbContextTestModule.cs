@@ -3,7 +3,7 @@ using MongoDB.Driver;
 using RolePlayedGamesHelper.Repository.MongoDb;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
-namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
+namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules
 {
     public class MongoDbContextTestModule : Module
     {

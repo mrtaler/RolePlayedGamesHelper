@@ -8,7 +8,6 @@ namespace RolePlayedGamesHelper.Repository.UnitTests.TestObjects.Assert.PrimaryK
         {
 
         }
-
         [RepositoryPrimaryKey]
         public int SomeRandomName { get; set; }
         public string Value { get; set; }
