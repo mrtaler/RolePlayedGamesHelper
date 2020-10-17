@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using RolePlayedGamesHelper.Repository.EntityFrameworkCore;
-using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects;
+using RolePlayedGamesHelper.Repository.EntityFrameworkCore.SharpRepository;
 
-namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
+namespace RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects
 {
     public class TestObjectContextCore : DbContext, ICoreDbContext
     {

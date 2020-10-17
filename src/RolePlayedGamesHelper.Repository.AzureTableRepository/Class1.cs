@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RolePlayedGamesHelper.Repository.AzureTableRepository
+﻿namespace RolePlayedGamesHelper.Repository.AzureTableRepository
 {
     public class Class1
     {

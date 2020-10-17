@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Xml.Serialization;
 using Autofac;
-using RolePlayedGamesHelper.Repository.SharpRepository.Configuration;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
-using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces.Repository;
 using RolePlayedGamesHelper.Repository.Xml.SharpRepository;
 
 namespace RolePlayedGamesHelper.Repository.Xml

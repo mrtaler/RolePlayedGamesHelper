@@ -1,18 +1,9 @@
 using Moq;
-using RolePlayedGamesHelper.Repository.UnitTests.Common;
 
 namespace RolePlayedGamesHelper.Repository.UnitTests.TestObjects.Assert
 {
-    [LogTestName]
     public abstract class TestBase
     {
-        protected TestBase()
-        {
-            TestHelper = new TestHelper();
-        }
-
-        public ITestHelper TestHelper { get; }
-
         protected static T N<T>() where T : class
         {
             return default(T);

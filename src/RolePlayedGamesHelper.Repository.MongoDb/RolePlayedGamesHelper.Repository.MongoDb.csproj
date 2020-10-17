@@ -1,17 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$(SolutionDir)\Nuget.Default.props" />
-  <Import Project="$(SolutionDir)\GA.Build.targets" />
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
     <UseFxCopAnalyzers>false</UseFxCopAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="5.2.0" />
-    <PackageReference Include="Serilog" Version="2.9.0" />
-    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
-    <PackageReference Include="MongoDB.Bson" Version="2.11.1" />
-    <PackageReference Include="MongoDB.Driver" Version="2.11.1" />
+    <PackageReference Include="MongoDB.Bson" Version="2.11.3" />
+    <PackageReference Include="MongoDB.Driver" Version="2.11.3" />
   </ItemGroup>
 
   <ItemGroup>

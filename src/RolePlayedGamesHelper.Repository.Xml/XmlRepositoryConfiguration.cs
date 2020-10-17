@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using RolePlayedGamesHelper.Repository.SharpRepository.Configuration;
+﻿using RolePlayedGamesHelper.Repository.SharpRepository.Configuration;
 
 namespace RolePlayedGamesHelper.Repository.Xml
 {

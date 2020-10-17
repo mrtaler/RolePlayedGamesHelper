@@ -146,7 +146,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
         /// <param name="result">The entity that was changed</param>
         private void CheckPartitionUpdate(T result)
         {
-            // TODO: right noow this is called mutliple times in Batchmode even if 3 in a row are for the same partition
+            // TODO: right now this is called multiple times in Batch mode even if 3 in a row are for the same partition
             //  this should batch up the calls to IncrementPartitionGeneration and only call once if there are 3 of the same partition values in the same batch
             if (TryPartitionValue(result, out TPartition partition))
             {
@@ -210,10 +210,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
 
         private static void RecurseExpressionTree(string memberName, Expression expression, ref List<TPartition> matches)
         {
-            var binaryExpression = expression as BinaryExpression;
-            var methodCallExpression = expression as MethodCallExpression;
-
-            if (binaryExpression != null)
+            if (expression is BinaryExpression binaryExpression)
             {
 
                 var left = binaryExpression.Left;
@@ -223,11 +220,11 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
                 if (binaryExpression.NodeType == ExpressionType.Equal)
                 {
                     // check value is on the right
-                    if (left is MemberExpression && ((MemberExpression)left).Member.Name == memberName)
+                    if (left is MemberExpression expression1 && expression1.Member.Name == memberName)
                     {
-                        if (right is ConstantExpression)
+                        if (right is ConstantExpression constantExpression)
                         {
-                            matches.Add((TPartition)((ConstantExpression)right).Value);
+                            matches.Add((TPartition)constantExpression.Value);
                             return;
                         }
                         if (right is MemberExpression)
@@ -243,11 +240,11 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
                     }
 
                     // check value is on the left
-                    if (right is MemberExpression && ((MemberExpression)right).Member.Name == memberName)
+                    if (right is MemberExpression memberExpression && memberExpression.Member.Name == memberName)
                     {
-                        if (left is ConstantExpression)
+                        if (left is ConstantExpression constantExpression)
                         {
-                            matches.Add((TPartition)((ConstantExpression)left).Value);
+                            matches.Add((TPartition)constantExpression.Value);
                             return;
                         }
                         if (left is MemberExpression)
@@ -266,7 +263,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
                 RecurseExpressionTree(memberName, left, ref matches);
                 RecurseExpressionTree(memberName, right, ref matches);
             }
-            else if (methodCallExpression != null)
+            else if (expression is MethodCallExpression methodCallExpression)
             {
                 if (methodCallExpression.NodeType != ExpressionType.Call || methodCallExpression.Method.Name != "Equals" || methodCallExpression.Arguments.Count != 1 || methodCallExpression.Arguments[0].Type != typeof(TPartition))
                     return;
@@ -321,107 +318,128 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
 
         protected override string GetAllCacheKey<TResult>(IQueryOptions<T> queryOptions, Expression<Func<T, TResult>> selector)
         {
-            return String.Format("{0}/{1}/{2}/{3}", FullCachePrefix, TypeFullName, GetGeneration(), Md5Helper.CalculateMd5("All::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null")));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/{GetGeneration()}/{Md5Helper.CalculateMd5("All::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null"))}";
         }
 
         protected override string FindAllCacheKey<TResult>(ISpecification<T> criteria, IQueryOptions<T> queryOptions, Expression<Func<T, TResult>> selector)
         {
             if (TryPartitionValue(criteria, out TPartition partition))
             {
-                return String.Format("{0}/{1}/p:{2}/{3}/{4}/{5}", FullCachePrefix, TypeFullName, partition, GetPartitionGeneration(partition), "FindAll", Md5Helper.CalculateMd5(criteria + "::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null")));
+                return
+                    $"{FullCachePrefix}/{TypeFullName}/p:{partition}/{GetPartitionGeneration(partition)}/FindAll/{Md5Helper.CalculateMd5(criteria + "::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null"))}";
             }
 
-            return String.Format("{0}/{1}/{2}/{3}/{4}", FullCachePrefix, TypeFullName, GetGeneration(), "FindAll", Md5Helper.CalculateMd5(criteria + "::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null")));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/{GetGeneration()}/FindAll/{Md5Helper.CalculateMd5(criteria + "::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null"))}";
         }
 
         protected override string FindCacheKey<TResult>(ISpecification<T> criteria, IQueryOptions<T> queryOptions, Expression<Func<T, TResult>> selector)
         {
             if (TryPartitionValue(criteria, out TPartition partition))
             {
-                return String.Format("{0}/{1}/p:{2}/{3}/{4}/{5}", FullCachePrefix, TypeFullName, partition, GetPartitionGeneration(partition), "Find", Md5Helper.CalculateMd5(criteria + "::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null")));
+                return
+                    $"{FullCachePrefix}/{TypeFullName}/p:{partition}/{GetPartitionGeneration(partition)}/Find/{Md5Helper.CalculateMd5(criteria + "::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null"))}";
             }
 
-            return String.Format("{0}/{1}/{2}/{3}/{4}", FullCachePrefix, TypeFullName, GetGeneration(), "Find", Md5Helper.CalculateMd5(criteria + "::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null")));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/{GetGeneration()}/Find/{Md5Helper.CalculateMd5(criteria + "::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null"))}";
         }
 
         protected override string CountCacheKey(ISpecification<T> criteria)
         {
             if (TryPartitionValue(criteria, out TPartition partition))
             {
-                return String.Format("{0}/{1}/p:{2}/{3}/{4}/{5}", FullCachePrefix, TypeFullName, partition, GetPartitionGeneration(partition), "Count", Md5Helper.CalculateMd5(criteria == null ? "null" : criteria.ToString()));
+                return
+                    $"{FullCachePrefix}/{TypeFullName}/p:{partition}/{GetPartitionGeneration(partition)}/Count/{Md5Helper.CalculateMd5(criteria == null ? "null" : criteria.ToString())}";
             }
 
-            return String.Format("{0}/{1}/{2}/{3}/{4}", FullCachePrefix, TypeFullName, GetGeneration(), "Count", Md5Helper.CalculateMd5(criteria == null ? "null" : criteria.ToString()));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/{GetGeneration()}/Count/{Md5Helper.CalculateMd5(criteria == null ? "null" : criteria.ToString())}";
         }
 
         protected override string LongCountCacheKey(ISpecification<T> criteria)
         {
             if (TryPartitionValue(criteria, out TPartition partition))
             {
-                return String.Format("{0}/{1}/p:{2}/{3}/{4}/{5}", FullCachePrefix, TypeFullName, partition, GetPartitionGeneration(partition), "LongCount", Md5Helper.CalculateMd5(criteria == null ? "null" : criteria.ToString()));
+                return
+                    $"{FullCachePrefix}/{TypeFullName}/p:{partition}/{GetPartitionGeneration(partition)}/LongCount/{Md5Helper.CalculateMd5(criteria == null ? "null" : criteria.ToString())}";
             }
 
-            return String.Format("{0}/{1}/{2}/{3}/{4}", FullCachePrefix, TypeFullName, GetGeneration(), "LongCount", Md5Helper.CalculateMd5(criteria == null ? "null" : criteria.ToString()));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/{GetGeneration()}/LongCount/{Md5Helper.CalculateMd5(criteria == null ? "null" : criteria.ToString())}";
         }
 
         protected override string GroupCountsCacheKey<TGroupKey>(Func<T, TGroupKey> keySelector, ISpecification<T> criteria)
         {
             if (TryPartitionValue(criteria, out TPartition partition))
             {
-                return String.Format("{0}/{1}/p:{2}/{3}/{4}/{5}}", FullCachePrefix, TypeFullName, partition, GetPartitionGeneration(partition), "GroupCounts", Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName));
+                return
+                    $"{FullCachePrefix}/{TypeFullName}/p:{partition}/{GetPartitionGeneration(partition)}/GroupCounts/{Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName)}";
             }
 
-            return String.Format("{0}/{1}/{2}/{3}/{4}", FullCachePrefix, TypeFullName, GetGeneration(), "GroupCounts", Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/{GetGeneration()}/GroupCounts/{Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName)}";
         }
 
         protected override string GroupCacheKey<TGroupKey, TResult>(Expression<Func<T, TGroupKey>> keySelector, Expression<Func<IGrouping<TGroupKey, T>, TResult>> resultSelector, ISpecification<T> criteria)
         {
             if (TryPartitionValue(criteria, out TPartition partition))
             {
-                return String.Format("{0}/{1}/p:{2}/{3}/{4}/{5}}", FullCachePrefix, TypeFullName, partition, GetPartitionGeneration(partition), "Group", Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName + "::" + resultSelector + "::" + typeof(TResult).FullName));
+                return
+                    $"{FullCachePrefix}/{TypeFullName}/p:{partition}/{GetPartitionGeneration(partition)}/Group/{Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName + "::" + resultSelector + "::" + typeof(TResult).FullName)}";
             }
 
-            return String.Format("{0}/{1}/{2}/{3}/{4}", FullCachePrefix, TypeFullName, GetGeneration(), "Group", Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName + "::" + resultSelector + "::" + typeof(TResult).FullName));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/{GetGeneration()}/Group/{Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName + "::" + resultSelector + "::" + typeof(TResult).FullName)}";
         }
 
         protected override string SumCacheKey<TResult>(Expression<Func<T, TResult>> selector, ISpecification<T> criteria)
         {
             if (TryPartitionValue(criteria, out TPartition partition))
             {
-                return String.Format("{0}/{1}/p:{2}/{3}/{4}/{5}}", FullCachePrefix, TypeFullName, partition, GetPartitionGeneration(partition), "Sum", Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria));
+                return
+                    $"{FullCachePrefix}/{TypeFullName}/p:{partition}/{GetPartitionGeneration(partition)}/Sum/{Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria)}";
             }
 
-            return String.Format("{0}/{1}/{2}/{3}/{4}", FullCachePrefix, TypeFullName, GetGeneration(), "Sum", Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/{GetGeneration()}/Sum/{Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria)}";
         }
 
         protected override string AverageCacheKey<TSelector>(Expression<Func<T, TSelector>> selector, ISpecification<T> criteria)
         {
             if (TryPartitionValue(criteria, out TPartition partition))
             {
-                return String.Format("{0}/{1}/p:{2}/{3}/{4}/{5}}", FullCachePrefix, TypeFullName, partition, GetPartitionGeneration(partition), "Average", Md5Helper.CalculateMd5(typeof(TSelector).FullName + "::" + selector + "::" + criteria));
+                return
+                    $"{FullCachePrefix}/{TypeFullName}/p:{partition}/{GetPartitionGeneration(partition)}/Average/{Md5Helper.CalculateMd5(typeof(TSelector).FullName + "::" + selector + "::" + criteria)}";
             }
 
-            return String.Format("{0}/{1}/{2}/{3}/{4}", FullCachePrefix, TypeFullName, GetGeneration(), "Average", Md5Helper.CalculateMd5(typeof(TSelector).FullName + "::" + selector + "::" + criteria));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/{GetGeneration()}/Average/{Md5Helper.CalculateMd5(typeof(TSelector).FullName + "::" + selector + "::" + criteria)}";
         }
 
         protected override string MinCacheKey<TResult>(Expression<Func<T, TResult>> selector, ISpecification<T> criteria)
         {
             if (TryPartitionValue(criteria, out TPartition partition))
             {
-                return String.Format("{0}/{1}/p:{2}/{3}/{4}/{5}}", FullCachePrefix, TypeFullName, partition, GetPartitionGeneration(partition), "Min", Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria));
+                return
+                    $"{FullCachePrefix}/{TypeFullName}/p:{partition}/{GetPartitionGeneration(partition)}/Min/{Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria)}";
             }
 
-            return String.Format("{0}/{1}/{2}/{3}/{4}", FullCachePrefix, TypeFullName, GetGeneration(), "Min", Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/{GetGeneration()}/Min/{Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria)}";
         }
 
         protected override string MaxCacheKey<TResult>(Expression<Func<T, TResult>> selector, ISpecification<T> criteria)
         {
             if (TryPartitionValue(criteria, out TPartition partition))
             {
-                return String.Format("{0}/{1}/p:{2}/{3}/{4}/{5}}", FullCachePrefix, TypeFullName, partition, GetPartitionGeneration(partition), "Max", Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria));
+                return
+                    $"{FullCachePrefix}/{TypeFullName}/p:{partition}/{GetPartitionGeneration(partition)}/Max/{Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria)}";
             }
 
-            return String.Format("{0}/{1}/{2}/{3}/{4}", FullCachePrefix, TypeFullName, GetGeneration(), "Max", Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/{GetGeneration()}/Max/{Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria)}";
         }
 
         private int GetGeneration()
@@ -438,7 +456,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
 
         private string GetGenerationKey()
         {
-            return String.Format("{0}/{1}/Generation", FullCachePrefix, TypeFullName);
+            return $"{FullCachePrefix}/{TypeFullName}/Generation";
         }
 
         private int GetPartitionGeneration(TPartition partition)
@@ -455,7 +473,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
 
         protected string GetPartitionGenerationKey(TPartition partition)
         {
-            return String.Format("{0}/{1}/p:{2}/Generation", FullCachePrefix, TypeFullName, partition);
+            return $"{FullCachePrefix}/{TypeFullName}/p:{partition}/Generation";
         }
     }
 }

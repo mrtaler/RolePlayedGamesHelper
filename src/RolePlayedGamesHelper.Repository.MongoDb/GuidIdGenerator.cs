@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using MongoDB.Bson.Serialization;
 
 namespace RolePlayedGamesHelper.Repository.MongoDb

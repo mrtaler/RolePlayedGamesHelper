@@ -5,7 +5,7 @@ using Raven.Client.Documents.Session;
 using RolePlayedGamesHelper.Repository.RavenDb;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 
-namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
+namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules
 {
     public class RavenContextTestModule : Module
     {

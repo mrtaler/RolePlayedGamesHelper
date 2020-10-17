@@ -16,7 +16,7 @@ namespace RolePlayedGamesHelper.Repository.RavenDb
             DataContextFactory = dataContextFactory;
         }
 
-        private bool _isDisposed;
+        private bool isDisposed;
 
         /// <inheritdoc />
         public override RavenDbContextFactory DataContextFactory { get; }
@@ -47,7 +47,7 @@ namespace RolePlayedGamesHelper.Repository.RavenDb
         }
         private void Dispose(bool disposing)
         {
-            if (_isDisposed)
+            if (isDisposed)
                 return;
 
             if (disposing)
@@ -56,7 +56,7 @@ namespace RolePlayedGamesHelper.Repository.RavenDb
             }
             // Free any unmanaged objects here.
             //
-            _isDisposed = true;
+            isDisposed = true;
         }
 
         ~RavenUnitOfWork()

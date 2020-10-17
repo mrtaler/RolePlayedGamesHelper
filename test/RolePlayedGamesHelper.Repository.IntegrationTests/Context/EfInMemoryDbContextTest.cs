@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using RolePlayedGamesHelper.Repository.EntityFramework;
-using RolePlayedGamesHelper.Repository.EntityFrameworkCore;
 using RolePlayedGamesHelper.Repository.IntegrationTests.Common;
 using RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects;

@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using RolePlayedGamesHelper.Repository.SharpRepository.Attributes;
+﻿using RolePlayedGamesHelper.Repository.SharpRepository.Attributes;
 
 namespace RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects
 {

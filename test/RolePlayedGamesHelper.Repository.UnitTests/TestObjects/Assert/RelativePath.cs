@@ -6,32 +6,32 @@ namespace RolePlayedGamesHelper.Repository.UnitTests.TestObjects.Assert
     //TODO: BG - This guts of the following code was found online. Find the source and reference.
     public class RelativeDirectory
     {
-        private DirectoryInfo _dirInfo;
+        private DirectoryInfo dirInfo;
 
         public RelativeDirectory()
         {
-            _dirInfo = new DirectoryInfo(AppContext.BaseDirectory);
+            dirInfo = new DirectoryInfo(AppContext.BaseDirectory);
         }
 
         public RelativeDirectory(string absoluteDir)
         {
-            _dirInfo = new DirectoryInfo(absoluteDir);
+            dirInfo = new DirectoryInfo(absoluteDir);
         }
 
         public string Dir
         {
-            get { return _dirInfo.Name; }
+            get { return dirInfo.Name; }
         }
 
         public string Path
         {
-            get { return _dirInfo.FullName; }
+            get { return dirInfo.FullName; }
             set
             {
                 try
                 {
                     var newDir = new DirectoryInfo(value);
-                    _dirInfo = newDir;
+                    dirInfo = newDir;
                 }
                 catch
                 {
@@ -44,7 +44,7 @@ namespace RolePlayedGamesHelper.Repository.UnitTests.TestObjects.Assert
         {
             do
             {
-                if (_dirInfo.Name.Equals(folderName)) return true;
+                if (dirInfo.Name.Equals(folderName)) return true;
             } while (Up());
 
             return false;
@@ -54,9 +54,9 @@ namespace RolePlayedGamesHelper.Repository.UnitTests.TestObjects.Assert
         {
             for (int i = 0; i < numLevels; i++)
             {
-                DirectoryInfo tempDir = _dirInfo.Parent;
+                DirectoryInfo tempDir = dirInfo.Parent;
                 if (tempDir != null)
-                    _dirInfo = tempDir;
+                    dirInfo = tempDir;
                 else
                     return false;
             }
@@ -69,11 +69,11 @@ namespace RolePlayedGamesHelper.Repository.UnitTests.TestObjects.Assert
         }
         public Boolean Down(string match)
         {
-            DirectoryInfo[] dirs = _dirInfo.GetDirectories(match + '*');
+            DirectoryInfo[] dirs = dirInfo.GetDirectories(match + '*');
 
             if (dirs.Length == 0) return false;
 
-            _dirInfo = dirs[0];
+            dirInfo = dirs[0];
             return true;
         }
     }

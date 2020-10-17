@@ -47,7 +47,7 @@ jobs:
   release:
     name: "Publish to Github Package Registry"
     needs: [semantic-version]
-    # if:  ${{ needs.semantic-version.outputs.output1 == 'true' }} 
+    if:  ${{ needs.semantic-version.outputs.output1 == 'true' }} 
     runs-on: ubuntu-latest #windows-latest
     env:
       DOTNET_NOLOGO: true

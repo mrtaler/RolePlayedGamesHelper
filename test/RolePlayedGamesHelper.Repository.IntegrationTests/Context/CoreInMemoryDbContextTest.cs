@@ -3,9 +3,6 @@ using RolePlayedGamesHelper.Repository.EntityFrameworkCore;
 using RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects.Assert;
-using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects.Mongo;
-using RolePlayedGamesHelper.Repository.MongoDb;
-using RolePlayedGamesHelper.Repository.RavenDb;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 using Xunit;
 

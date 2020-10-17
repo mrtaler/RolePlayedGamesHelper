@@ -1,4 +1,5 @@
 using Autofac;
+using RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects;
 using RolePlayedGamesHelper.Repository.IntegrationTests.TestObjects.Assert;
 using RolePlayedGamesHelper.Repository.RavenDb;

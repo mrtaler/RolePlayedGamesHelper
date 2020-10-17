@@ -7,7 +7,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
     /// </summary>
     public class NoCachingProvider : ICachingProvider
     {
-        public void Set<T>(string key, T value, CacheItemPriority priority = CacheItemPriority.Normal, int? cacheTime = null)
+        public void Set<T>(string key, T value, CacheItemPriority priority = CacheItemPriority.Normal, int? timeoutInSeconds = null)
         {
             // do nothing
         }
@@ -28,14 +28,14 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
             return false;
         }
 
-        public int Increment(string key, int defaultValue, int value, CacheItemPriority priority = CacheItemPriority.Normal)
+        public int Increment(string key, int defaultValue, int incrementValue, CacheItemPriority priority = CacheItemPriority.Normal)
         {
             return defaultValue;
         }
 
         public void Dispose()
         {
-            
+            // Do nothing because nothing to dispose
         }
     }
 }

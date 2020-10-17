@@ -1,5 +1,4 @@
-﻿using System;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using RolePlayedGamesHelper.Repository.SharpRepository.Caching;
 
 namespace RolePlayedGamesHelper.Repository.MongoDb.SharpRepository

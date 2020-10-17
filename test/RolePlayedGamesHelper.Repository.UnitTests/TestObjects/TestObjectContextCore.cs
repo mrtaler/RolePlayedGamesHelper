@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RolePlayedGamesHelper.Repository.EntityFrameworkCore.SharpRepository;
 
 namespace RolePlayedGamesHelper.Repository.UnitTests.TestObjects
 {
-    public class TestObjectContextCore : DbContext
+    public class TestObjectContextCore : DbContext, ICoreDbContext
     {
         public TestObjectContextCore()
         { }

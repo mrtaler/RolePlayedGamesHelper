@@ -2,7 +2,7 @@ using Autofac;
 using RolePlayedGamesHelper.Repository.SharpRepository.Interfaces;
 using RolePlayedGamesHelper.Repository.Xml;
 
-namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
+namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context.Modules
 {
     public class XmlContextTestModule : Module
     {

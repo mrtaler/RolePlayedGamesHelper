@@ -11,11 +11,11 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
 {
     public abstract class CachingStrategyBase<T, TKey> : ICachingStrategy<T, TKey> where T : class
     {
-        private ICachingProvider _cachingProvider;
+        private ICachingProvider cachingProvider;
         public string CachePrefix { private get; set; }
         protected string TypeFullName { get; set; }
         public int? MaxResults { get; set; }
-        private readonly Type _entityType;
+        private readonly Type entityType;
 
         internal CachingStrategyBase() : this(null)
         {}
@@ -29,20 +29,17 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
             CachingProvider = cachingProvider;
             MaxResults = maxResults;
 
-            _entityType = typeof(T);
-            TypeFullName = _entityType.FullName ?? _entityType.Name; // sometimes FullName returns null in certain derived type situations, so I added the check to use the Name property if FullName is null
+            entityType = typeof(T);
+            TypeFullName = entityType.FullName ?? entityType.Name; // sometimes FullName returns null in certain derived type situations, so I added the check to use the Name property if FullName is null
         }
 
         public ICachingProvider CachingProvider
         {
-            get { return _cachingProvider; }
-            set { _cachingProvider = value; }
+            get => cachingProvider;
+            set => cachingProvider = value;
         }
 
-        public string FullCachePrefix
-        {
-            get { return CachePrefix + Cache.GlobalCachingPrefixCounter + "-" + GetCachingPrefixCounter(); }
-        }
+        public string FullCachePrefix => CachePrefix + Cache.GlobalCachingPrefixCounter + "-" + GetCachingPrefixCounter();
 
         public virtual bool TryGetResult(TKey key, out T result)
         {
@@ -58,11 +55,11 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
             }
         }
 
-        public virtual void SaveGetResult(TKey key, T item)
+        public virtual void SaveGetResult(TKey key, T result)
         {
             try
             {
-                SetCache(GetWriteThroughCacheKey(key), item);
+                SetCache(GetWriteThroughCacheKey(key), result);
             }
             catch (Exception)
             {
@@ -426,7 +423,7 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
         private string GetCachingPrefixCounterKey()
         {
             // Note: it's important to use CachePrefix instead of FullCachePrefix otherwise it is tied to itself and won't be able to find it once the counter is incremented
-            return String.Format("{0}/{1}/CachingPrefixCounter", CachePrefix, TypeFullName);
+            return $"{CachePrefix}/{TypeFullName}/CachingPrefixCounter";
         }
 
         private int IncrementCachingPrefixCounter()
@@ -452,9 +449,9 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
             {
                 CachingProvider.Set(cacheKey, result);
 
-                if (queryOptions is IPagingOptions)
+                if (queryOptions is IPagingOptions options)
                 {
-                    CachingProvider.Set(cacheKey + "=>pagingTotal", ((IPagingOptions)queryOptions).TotalItems);
+                    CachingProvider.Set(cacheKey + "=>pagingTotal", options.TotalItems);
                 }
                 //Trace.WriteLine(String.Format("Write item to cache: {0} - {1}", cacheKey, typeof(TCacheItem).Name));
             }
@@ -466,67 +463,79 @@ namespace RolePlayedGamesHelper.Repository.SharpRepository.Caching
 
         protected string GetWriteThroughCacheKey(TKey key)
         {
-            return String.Format("{0}/{1}/{2}", FullCachePrefix, TypeFullName, key);
+            return $"{FullCachePrefix}/{TypeFullName}/{key}";
         }
 
         protected virtual string GetAllCacheKey<TResult>(IQueryOptions<T> queryOptions, Expression<Func<T, TResult>> selector)
         {
-            return String.Format("{0}/{1}/{2}", FullCachePrefix, TypeFullName, Md5Helper.CalculateMd5("All::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null")));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/{Md5Helper.CalculateMd5("All::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null"))}";
         }
 
         protected virtual string FindAllCacheKey<TResult>(ISpecification<T> criteria, IQueryOptions<T> queryOptions, Expression<Func<T, TResult>> selector)
         {
-            return String.Format("{0}/{1}/{2}/{3}", FullCachePrefix, TypeFullName, "FindAll", Md5Helper.CalculateMd5(criteria + "::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null")));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/FindAll/{Md5Helper.CalculateMd5(criteria + "::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null"))}";
         }
 
         protected virtual string FindCacheKey<TResult>(ISpecification<T> criteria, IQueryOptions<T> queryOptions, Expression<Func<T, TResult>> selector)
         {
-            return String.Format("{0}/{1}/{2}/{3}", FullCachePrefix, TypeFullName, "Find", Md5Helper.CalculateMd5(criteria + "::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null")));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/Find/{Md5Helper.CalculateMd5(criteria + "::" + (queryOptions != null ? queryOptions.ToString() : "null") + "::" + (selector != null ? selector.ToString() : "null"))}";
         }
 
         protected virtual string CountCacheKey(ISpecification<T> criteria)
         {
-            return String.Format("{0}/{1}/{2}/{3}", FullCachePrefix, TypeFullName, "Count", Md5Helper.CalculateMd5(criteria == null ? "null" : criteria.ToString()));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/Count/{Md5Helper.CalculateMd5(criteria == null ? "null" : criteria.ToString())}";
         }
 
         protected virtual string LongCountCacheKey(ISpecification<T> criteria)
         {
-            return String.Format("{0}/{1}/{2}/{3}", FullCachePrefix, TypeFullName, "LongCount", Md5Helper.CalculateMd5(criteria == null ? "null" : criteria.ToString()));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/LongCount/{Md5Helper.CalculateMd5(criteria == null ? "null" : criteria.ToString())}";
         }
 
         protected virtual string GroupCountsCacheKey<TGroupKey>(Func<T, TGroupKey> keySelector, ISpecification<T> criteria)
         {
-            return String.Format("{0}/{1}/{2}/{3}", FullCachePrefix, TypeFullName, "GroupCounts", Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/GroupCounts/{Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName)}";
         }
 
         protected virtual string GroupLongCountsCacheKey<TGroupKey>(Func<T, TGroupKey> keySelector, ISpecification<T> criteria)
         {
-            return String.Format("{0}/{1}/{2}/{3}", FullCachePrefix, TypeFullName, "GroupLongCounts", Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/GroupLongCounts/{Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName)}";
         }
 
         protected virtual string GroupCacheKey<TGroupKey, TResult>(Expression<Func<T, TGroupKey>> keySelector, Expression<Func<IGrouping<TGroupKey, T>, TResult>> resultSelector, ISpecification<T> criteria)
         {
-            return String.Format("{0}/{1}/{2}/{3}", FullCachePrefix, TypeFullName, "Group", Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName + "::" + resultSelector + "::" + typeof(TResult).FullName));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/Group/{Md5Helper.CalculateMd5((criteria == null ? "null" : criteria.ToString()) + "::" + keySelector + "::" + typeof(TGroupKey).FullName + "::" + resultSelector + "::" + typeof(TResult).FullName)}";
         }
 
         protected virtual string SumCacheKey<TResult>(Expression<Func<T, TResult>> selector, ISpecification<T> criteria)
         {
-            return String.Format("{0}/{1}/{2}/{3}", FullCachePrefix, TypeFullName, "Sum", Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/Sum/{Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria)}";
         }
 
         protected virtual string AverageCacheKey<TSelector>(Expression<Func<T, TSelector>> selector, ISpecification<T> criteria)
         {
-            return String.Format("{0}/{1}/{2}/{3}", FullCachePrefix, TypeFullName, "Average", Md5Helper.CalculateMd5(typeof(TSelector).FullName + "::" + selector + "::" + criteria));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/Average/{Md5Helper.CalculateMd5(typeof(TSelector).FullName + "::" + selector + "::" + criteria)}";
         }
 
         protected virtual string MinCacheKey<TResult>(Expression<Func<T, TResult>> selector, ISpecification<T> criteria)
         {
-            return String.Format("{0}/{1}/{2}/{3}", FullCachePrefix, TypeFullName, "Min", Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/Min/{Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria)}";
         }
 
         protected virtual string MaxCacheKey<TResult>(Expression<Func<T, TResult>> selector, ISpecification<T> criteria)
         {
-            return String.Format("{0}/{1}/{2}/{3}", FullCachePrefix, TypeFullName, "Max", Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria));
+            return
+                $"{FullCachePrefix}/{TypeFullName}/Max/{Md5Helper.CalculateMd5(typeof(TResult).FullName + "::" + selector + "::" + criteria)}";
         }
     }
 }
