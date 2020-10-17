@@ -28,6 +28,8 @@ jobs:
           path: .\.sonar\scanner
           key: ${{ runner.os }}-sonar-scanner
           restore-keys: ${{ runner.os }}-sonar-scanner
+      - name: Update nuget sources
+        run: dotnet nuget update source BoardGamesArtifacts -u 'Siarhei Linkevich' --store-password-in-clear-text -p ${{secrets.AZURE_ARTIFACTS_PAT}}  
       - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         shell: powershell
