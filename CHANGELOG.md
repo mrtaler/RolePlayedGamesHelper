@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.39](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.38...v1.1.0-release-candidate.39) (2020-10-17)
+
+
+        ### Features
+
+* **Test:** add Unit tests ([65f4f28](https://github.com/mrtaler/RolePlayedGamesHelper/commit/65f4f2891c1ac537635ed04495f950419fa075cd))
+
+        ### Miscellaneous
+
+* **Code:** refactoring ([28f66a0](https://github.com/mrtaler/RolePlayedGamesHelper/commit/28f66a07b4cc72c03b0ea8d1353a6648c9d2fec5))* **Code:** refactoring ([731a87f](https://github.com/mrtaler/RolePlayedGamesHelper/commit/731a87fac885f7686b3f3beb8c7d307c46526231))* fix sonarqube runner ([88b186d](https://github.com/mrtaler/RolePlayedGamesHelper/commit/88b186dc6fdaecc0141c7305c787ca20fb920b86))* fix sonarqube scaner ([92c5384](https://github.com/mrtaler/RolePlayedGamesHelper/commit/92c53846a3a35355ed3b71c37fb6d32e4f4e41cd))* fix pack ([d8a1389](https://github.com/mrtaler/RolePlayedGamesHelper/commit/d8a1389f0b5703e5eb681954e9aa4bc5472c226d))
+
 # [1.1.0-release-candidate.38](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.37...v1.1.0-release-candidate.38) (2020-10-17)
 
 
