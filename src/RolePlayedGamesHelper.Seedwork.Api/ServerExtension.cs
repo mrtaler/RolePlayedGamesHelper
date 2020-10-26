@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RolePlayedGamesHelper.Seedwork.Api;
 using RolePlayedGamesHelper.Seedwork.Api.Extension.Application;
 using RolePlayedGamesHelper.Seedwork.Api.Extension.Config;
 using RolePlayedGamesHelper.Seedwork.Api.Middlewares;
@@ -43,11 +44,10 @@ namespace GurpsAssistant.Seedwork.Api
                 .Enrich.WithProperty("Environment", env.EnvironmentName)
                 .MinimumLevel.Debug()
                 .WriteTo.Trace()
-                /*.WriteTo.RollingFile(
-                    pathFormat: "c:\\Logs\\" + moduleName + "-Log-{Date}.txt",
-                    restrictedToMinimumLevel: LogEventLevel.Debug)*/
-
-                // outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.ffff}|{TenantName}|{RequestId}|{SourceContext}|{Level:u3}|{Message:lj}{NewLine}{Exception}")
+                .WriteTo.File(
+                    path: "c:\\Logs\\" + moduleName + "-Log-{Date}.txt",
+                    restrictedToMinimumLevel: LogEventLevel.Debug,//)
+                  outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.ffff}|{TenantName}|{RequestId}|{SourceContext}|{Level:u3}|{Message:lj}{NewLine}{Exception}")
                 .WriteTo.Console(theme: AnsiConsoleTheme.Code)
 
                 // , outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.ffff}|{TenantName}|{RequestId}|{SourceContext}|{Level:u3}|{Message:lj}{NewLine}{Exception}")

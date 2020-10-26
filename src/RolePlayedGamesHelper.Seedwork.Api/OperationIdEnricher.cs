@@ -2,7 +2,7 @@
 using Serilog.Core;
 using Serilog.Events;
 
-namespace GurpsAssistant.Seedwork.Api
+namespace RolePlayedGamesHelper.Seedwork.Api
 {
     /// <summary>
     /// The operation id enricher.

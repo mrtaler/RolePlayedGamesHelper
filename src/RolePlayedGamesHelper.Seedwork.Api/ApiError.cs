@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace GurpsAssistant.Seedwork.Api
+namespace RolePlayedGamesHelper.Seedwork.Api
 {
     /// <summary>
     /// The api error.

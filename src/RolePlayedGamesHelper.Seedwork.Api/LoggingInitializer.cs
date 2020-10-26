@@ -1,7 +1,7 @@
 ﻿using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.Extensibility;
 
-namespace GurpsAssistant.Seedwork.Api
+namespace RolePlayedGamesHelper.Seedwork.Api
 {
     /// <summary>
     /// The logging initializer.
