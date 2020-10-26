@@ -43,9 +43,9 @@ namespace GurpsAssistant.Seedwork.Api
                 .Enrich.WithProperty("Environment", env.EnvironmentName)
                 .MinimumLevel.Debug()
                 .WriteTo.Trace()
-                .WriteTo.RollingFile(
+                /*.WriteTo.RollingFile(
                     pathFormat: "c:\\Logs\\" + moduleName + "-Log-{Date}.txt",
-                    restrictedToMinimumLevel: LogEventLevel.Debug)
+                    restrictedToMinimumLevel: LogEventLevel.Debug)*/
 
                 // outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.ffff}|{TenantName}|{RequestId}|{SourceContext}|{Level:u3}|{Message:lj}{NewLine}{Exception}")
                 .WriteTo.Console(theme: AnsiConsoleTheme.Code)
