@@ -13,7 +13,7 @@
     <MSBuildWarningsAsMessages>MSB3246</MSBuildWarningsAsMessages>
 
     <ProjectName Condition=" '$(ProjectName)' == '' ">$(MSBuildProjectName)</ProjectName>
-    <BaseOutputPath>$([System.IO.Path]::GetFullPath($(SolutionDir)\build))</BaseOutputPath>
+    <BaseOutputPath>$([System.IO.Path]::GetFullPath('$(SolutionDir)build'))</BaseOutputPath>
     <OutputPath>$(BaseOutputPath)\$(Configuration)\$(ProjectName)</OutputPath>
     <BaseIntermediateOutputPath>$(BaseOutputPath)\obj\$(ProjectName)</BaseIntermediateOutputPath>
 
@@ -27,8 +27,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="5.2.0" />
-    <PackageReference Include="Serilog" Version="2.9.0" />
+    <PackageReference Include="Autofac" Version="6.0.0" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
     <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
   </ItemGroup>
 

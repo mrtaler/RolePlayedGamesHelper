@@ -42,7 +42,7 @@ namespace RolePlayedGamesHelper.Repository.IntegrationTests.Context
 
         }
 
-        [Fact(Skip = "specific reason")]
+        [Fact]
         public void XmlDbContextTest()
         {
             var uow = container.Resolve<XmlUnitOfWork>();
