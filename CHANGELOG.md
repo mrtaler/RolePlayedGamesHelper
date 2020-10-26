@@ -1,5 +1,20 @@
 # Project Changelog
 
+# [1.1.0-release-candidate.40](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.39...v1.1.0-release-candidate.40) (2020-10-26)
+
+
+        ### Miscellaneous
+
+* Merge pull request #4 from mrtaler/feature/CQRS ([b7d2a2f](https://github.com/mrtaler/RolePlayedGamesHelper/commit/b7d2a2fa92acc91e425e5e24573b45dec867ac8e)), closes [#4](https://github.com/mrtaler/RolePlayedGamesHelper/issues/4)* smol fixes ([5fc3498](https://github.com/mrtaler/RolePlayedGamesHelper/commit/5fc34988f2693759ab58a0bf4803c06a6184b25a))* mrge dev ([f55eb64](https://github.com/mrtaler/RolePlayedGamesHelper/commit/f55eb6404405d2b77379ba9f9fc4df71f5d7155a))
+
+        ### Bug Fixes
+
+* **semantic:** Fix packages ([565920e](https://github.com/mrtaler/RolePlayedGamesHelper/commit/565920e21b9e424350a8b978eb95cd0b0bf32360))
+
+        ### Features
+
+* **CQRS:** Add cqrs implimrntation with Kledex repository ([ab81ce1](https://github.com/mrtaler/RolePlayedGamesHelper/commit/ab81ce11468477f3c2a86580f8c679f68ba50653))* **CQRS:** initial branch for Kledex CQRS ([f82aa77](https://github.com/mrtaler/RolePlayedGamesHelper/commit/f82aa7775f11f1adeefbaddc9821e3dea23a5a5c))
+
 # [1.1.0-release-candidate.39](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-release-candidate.38...v1.1.0-release-candidate.39) (2020-10-17)
 
 
