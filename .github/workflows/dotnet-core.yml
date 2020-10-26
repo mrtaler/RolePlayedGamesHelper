@@ -108,8 +108,8 @@ jobs:
       #    Where-Object { $_.Name.Contains('RolePlayedGamesHelper') } |
       #    ForEach-Object { dotnet nuget push $_ --source "BoardGamesArtifacts" --api-key whatever --skip-duplicate }          
       #  run: find $GITHUB_WORKSPACE/Nugets/ -type f -name 'RolePlayedGamesHelper.*.nupkg' | while read FILE ; do | dotnet nuget push ${FILE} --source "BoardGamesArtifacts" --api-key whatever --skip-duplicate done
-        run: dotnet nuget push "**/RolePlayedGamesHelper.*.nupkg" --source "nuget.org" --api-key whatever --skip-duplicate **/*.nupkg 
-          #   dotnet nuget push AppLogger.1.0.0.nupkg            --api-key qz2jga8pl3dvn2akksyquwcs9ygggg4exypy3bhxy6w6x6 --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push "**/RolePlayedGamesHelper.*.nupkg" --source "https://api.nuget.org/v3/index.json" --api-key ${{secrets.NUGET_ARTIFACTS}} --skip-duplicate **/*.nupkg 
+          #   dotnet nuget push AppLogger.1.0.0.nupkg            --api-key qz2jga8pl3dvn2akksyquwcs9ygggg4exypy3bhxy6w6x6 --source 
       - uses: actions/upload-artifact@v2
         with:
           path: Nugets/*
