@@ -15,7 +15,7 @@
 //        /// </summary>
 //        private readonly List<ServiceDomainEvent> notifications;
 
-//        /// <summary>
+//        /// <summary> 
 //        /// The event store.
 //        /// </summary>
 //        private readonly IStoreProvider eventStore;
