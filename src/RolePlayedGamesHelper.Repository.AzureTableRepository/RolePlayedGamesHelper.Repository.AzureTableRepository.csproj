@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="$(SolutionDir)\Nuget.Default.props"/>
-  <PropertyGroup>
-    <UseFxCopAnalyzers>false</UseFxCopAnalyzers>
-  </PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\..\Nuget.Default.props" />
+	<PropertyGroup>
+		<UseFxCopAnalyzers>false</UseFxCopAnalyzers>
+	</PropertyGroup>
 
 </Project>

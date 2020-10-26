@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\..\Nuget.Default.props" />
+	<PropertyGroup>
+		<UseFxCopAnalyzers>false</UseFxCopAnalyzers>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Azure.ServiceBus" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\RolePlayedGamesHelper.Cqrs.Kledex\RolePlayedGamesHelper.Cqrs.Kledex.csproj" />
+	</ItemGroup>
+</Project>

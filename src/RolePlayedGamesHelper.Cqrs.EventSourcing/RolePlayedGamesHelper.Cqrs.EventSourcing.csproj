@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\Nuget.Default.props" />
+  <PropertyGroup>
+    <UseFxCopAnalyzers>false</UseFxCopAnalyzers>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ReflectionMagic" Version="4.1.0" />
+    <PackageReference Include="Microsoft.Azure.Cosmos.Table" Version="1.0.8" />
+    <PackageReference Include="Streamstone" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RolePlayedGamesHelper.Cqrs.Kledex.Store.EF\RolePlayedGamesHelper.Cqrs.Kledex.Store.EF.csproj" />
+    <ProjectReference Include="..\RolePlayedGamesHelper.Cqrs.Kledex\RolePlayedGamesHelper.Cqrs.Kledex.csproj" />
+  </ItemGroup>
+</Project>

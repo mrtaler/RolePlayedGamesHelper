@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\..\Nuget.Default.props" />
+	<PropertyGroup>
+		<UseFxCopAnalyzers>false</UseFxCopAnalyzers>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\RolePlayedGamesHelper.Cqrs.Kledex\RolePlayedGamesHelper.Cqrs.Kledex.csproj" />
+		<ProjectReference Include="..\RolePlayedGamesHelper.Repository\RolePlayedGamesHelper.Repository.csproj" />
+	</ItemGroup>
+
+</Project>
