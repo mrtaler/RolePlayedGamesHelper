@@ -2,21 +2,21 @@
 
 namespace RolePlayedGamesHelper.Cqrs.Kledex.Mapping
 {
-    public class ObjectFactory : IObjectFactory
+  public class ObjectFactory : IObjectFactory
+  {
+    private readonly IMapper _mapper;
+
+    public ObjectFactory(IMapper mapper)
     {
-        private readonly IMapper _mapper;
-
-        public ObjectFactory(IMapper mapper)
-        {
-            _mapper = mapper;
-        }
-
-        /// <inheritdoc />
-        public dynamic CreateConcreteObject(object obj)
-        {
-            var type = obj.GetType();
-            dynamic result = _mapper.Map(obj, type, type);
-            return result;
-        }
+      _mapper = mapper;
     }
+
+    /// <inheritdoc />
+    public dynamic CreateConcreteObject(object obj)
+    {
+      var     type   = obj.GetType();
+      dynamic result = _mapper.Map(obj, type, type);
+      return result;
+    }
+  }
 }

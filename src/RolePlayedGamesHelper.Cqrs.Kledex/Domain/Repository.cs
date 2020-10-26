@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 namespace RolePlayedGamesHelper.Cqrs.Kledex.Domain
 {
     /// <inheritdoc />
-    public class Repository<T> : IRepository<T> where T : IAggregateRoot
+    public class EventStoreRepository<T> : IEventStoreRepository<T> where T : AggregateRoot
     {
         private readonly IStoreProvider _storeProvider;
 
-        public Repository(IStoreProvider storeProvider)
+        public EventStoreRepository(IStoreProvider storeProvider)
         {
             _storeProvider = storeProvider;
         }
@@ -48,7 +48,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Domain
                 return default;
             }
 
-            var aggregate = Activator.CreateInstance<T>();        
+            var aggregate = Activator.CreateInstance<T>();
             aggregate.LoadsFromHistory(domainEvents);
             return aggregate;
         }
@@ -63,7 +63,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Domain
                 return default;
             }
 
-            var aggregate = Activator.CreateInstance<T>();          
+            var aggregate = Activator.CreateInstance<T>();
             aggregate.LoadsFromHistory(domainEvents);
             return aggregate;
         }

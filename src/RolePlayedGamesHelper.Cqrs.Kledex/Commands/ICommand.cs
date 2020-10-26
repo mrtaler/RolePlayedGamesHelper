@@ -7,7 +7,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Commands
         string UserId { get; set; }
         string Source { get; set; }
         DateTime TimeStamp { get; set; }
-        bool? ValidateCommand { get; set; }
+        bool? Validate { get; set; }
         bool? PublishEvents { get; set; }
     }
 }

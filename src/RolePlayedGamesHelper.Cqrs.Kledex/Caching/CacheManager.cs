@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Options;
+using RolePlayedGamesHelper.Cqrs.Kledex.Configuration;
 
 namespace RolePlayedGamesHelper.Cqrs.Kledex.Caching
 {
     public class CacheManager : ICacheManager
     {
         private readonly ICacheProvider _cacheProvider;
-        private readonly CacheOptions _options;
+        private readonly Options _options;
 
-        public CacheManager(ICacheProvider cacheProvider, IOptions<CacheOptions> options)
+        public CacheManager(ICacheProvider cacheProvider, Microsoft.Extensions.Options.IOptions<Options> options)
         {
             _cacheProvider = cacheProvider;
             _options = options.Value;
@@ -18,7 +18,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Caching
         /// <inheritdoc />
         public Task<T> GetOrSetAsync<T>(string key, Func<Task<T>> acquireAsync)
         {
-            return GetOrSetAsync(key, _options.DefaultCacheTime, acquireAsync);
+            return GetOrSetAsync(key, _options.CacheTime, acquireAsync);
         }
 
         /// <inheritdoc />
@@ -47,7 +47,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Caching
         /// <inheritdoc />
         public T GetOrSet<T>(string key, Func<T> acquire)
         {
-            return GetOrSet(key, _options.DefaultCacheTime, acquire);
+            return GetOrSet(key, _options.CacheTime, acquire);
         }
 
         /// <inheritdoc />

@@ -1,33 +1,36 @@
-﻿using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using FluentValidation;
 using FluentValidation.Results;
+using RolePlayedGamesHelper.Cqrs.Kledex.Commands;
+using RolePlayedGamesHelper.Cqrs.Kledex.Dependencies;
 
 namespace RolePlayedGamesHelper.Cqrs.Kledex.Validation.FluentValidation
 {
     public class FluentValidationProvider : IValidationProvider
     {
-        private readonly IHandlerResolver _handlerResolver;
+        private readonly IHandlerResolver handlerResolver;
 
         public FluentValidationProvider(IHandlerResolver handlerResolver)
         {
-            _handlerResolver = handlerResolver;
+            this.handlerResolver = handlerResolver;
         }
 
-        public async Task<ValidationResponse> ValidateAsync<TCommand>(TCommand command)
-            where TCommand : ICommand
+        public async Task<ValidationResponse> ValidateAsync(ICommand command)
         {
-            var validator        = _handlerResolver.ResolveHandler<IValidator<TCommand>>();
-            var validationResult = await validator.ValidateAsync(command);
+            var validator = handlerResolver.ResolveHandler(command, typeof(IValidator<>));
+            var validateMethod = validator.GetType().GetMethod("ValidateAsync", new[] { command.GetType(), typeof(CancellationToken) });
+            var validationResult = await (Task<ValidationResult>)validateMethod.Invoke(validator, new object[] { command, default(CancellationToken) });
 
             return BuildValidationResponse(validationResult);
         }
 
-        public ValidationResponse Validate<TCommand>(TCommand command)
-            where TCommand : ICommand
+        public ValidationResponse Validate(ICommand command)
         {
-            var validator        = _handlerResolver.ResolveHandler<IValidator<TCommand>>();
-            var validationResult = validator.Validate(command);
+            var validator = handlerResolver.ResolveHandler(command, typeof(IValidator<>));
+            var validateMethod = validator.GetType().GetMethod("Validate", new[] { command.GetType() });
+            var validationResult = (ValidationResult)validateMethod.Invoke(validator, new object[] { command });
 
             return BuildValidationResponse(validationResult);
         }

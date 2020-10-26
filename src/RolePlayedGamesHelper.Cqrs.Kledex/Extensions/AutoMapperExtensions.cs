@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Windows.Input;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
-using RolePlayedGamesHelper.Cqrs.Kledex.Events;
+using RolePlayedGamesHelper.Cqrs.Kledex.Domain;
 
 namespace RolePlayedGamesHelper.Cqrs.Kledex.Extensions
 {
@@ -20,15 +19,13 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Extensions
             {
                 foreach (var type in types)
                 {
-                    var typesToMap = type.Assembly.GetTypes()
-                        .Where(t => t.GetTypeInfo().IsClass && !t.GetTypeInfo().IsAbstract && (
-                        typeof(ICommand).IsAssignableFrom(t) || 
-                        typeof(IEvent).IsAssignableFrom(t)))
+                    var domainEventTypes = type.Assembly.GetTypes()
+                        .Where(t => t.GetTypeInfo().IsClass && !t.GetTypeInfo().IsAbstract && typeof(IDomainEvent).IsAssignableFrom(t))
                         .ToList();
 
-                    foreach (var typeToMap in typesToMap)
+                    foreach (var domainEventType in domainEventTypes)
                     {
-                        cfg.CreateMap(typeToMap, typeToMap);
+                        cfg.CreateMap(domainEventType, domainEventType);
                     }
                 }
             });

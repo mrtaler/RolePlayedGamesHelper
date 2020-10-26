@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using RolePlayedGamesHelper.Cqrs.Kledex.Exceptions;
 
 namespace RolePlayedGamesHelper.Cqrs.Kledex.Dependencies
@@ -36,6 +37,15 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Dependencies
         {
             var paramType = param.GetType();
             var handlerType = type.MakeGenericType(paramType);
+            return ResolveHandler(handlerType);
+        }
+
+        public object ResolveQueryHandler(object query, Type type)
+        {
+            var queryType = query.GetType();
+            var queryInterface = queryType.GetInterfaces()[0];
+            var resultType = queryInterface.GetGenericArguments().FirstOrDefault();
+            var handlerType = type.MakeGenericType(queryType, resultType);
             return ResolveHandler(handlerType);
         }
     }

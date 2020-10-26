@@ -1,17 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="$(SolutionDir)\Nuget.Default.props" />
-  <Import Project="$(SolutionDir)\GA.Build.targets" />
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <UseFxCopAnalyzers>false</UseFxCopAnalyzers>
-  </PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\..\Nuget.Default.props" />
+	<PropertyGroup>
+		<UseFxCopAnalyzers>false</UseFxCopAnalyzers>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="9.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="9.2.2" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\RolePlayedGamesHelper.Cqrs.Kledex\RolePlayedGamesHelper.Cqrs.Kledex.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\RolePlayedGamesHelper.Cqrs.Kledex\RolePlayedGamesHelper.Cqrs.Kledex.csproj" />
+	</ItemGroup>
+
 
 </Project>

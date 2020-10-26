@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using RolePlayedGamesHelper.Cqrs.Kledex.Bus;
 using RolePlayedGamesHelper.Cqrs.Kledex.Commands;
 using RolePlayedGamesHelper.Cqrs.Kledex.Events;
+using RolePlayedGamesHelper.Cqrs.Kledex.Queries;
 
 namespace RolePlayedGamesHelper.Cqrs.Kledex
 {
@@ -16,15 +16,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex
         /// The command handler must implement Kledex.Commands.ICommandHandlerAsync&lt;TCommand&gt;.
         /// </summary>
         /// <param name="command">The command.</param>
-        Task SendAsync<TCommand>(TCommand command)
-            where TCommand : ICommand;
-
-        /// <summary>Sends the specified command asynchronously.</summary>
-        /// <param name="command">The command.</param>
-        /// <param name="commandHandler">The command handler.</param>
-        /// <returns></returns>
-        Task SendAsync<TCommand>(TCommand command, Func<Task<CommandResponse>> commandHandler)
-            where TCommand : ICommand;
+        Task SendAsync(ICommand command);
 
         /// <summary>
         /// Sends the specified command sequence asynchronously.
@@ -40,13 +32,6 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex
         /// <param name="command">The command.</param>
         /// <returns>A custom object set as result in the command hadler response.</returns>
         Task<TResult> SendAsync<TResult>(ICommand command);
-
-        /// <summary>Sends the specified command asynchronously.</summary>
-        /// <typeparam name="TResult">The type of the result.</typeparam>
-        /// <param name="command">The command.</param>
-        /// <param name="commandHandler">The command handler.</param>
-        /// <returns></returns>
-        Task<TResult> SendAsync<TResult>(ICommand command, Func<Task<CommandResponse>> commandHandler);
 
         /// <summary>
         /// Sends the specified command sequence asynchronously.
@@ -67,6 +52,15 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex
             where TEvent : IEvent;
 
         /// <summary>
+        /// Asynchronously gets the result.
+        /// The query handler must implement Kledex.Queries.IQueryHandlerAsync&lt;TQuery, TResult&gt;.
+        /// </summary>
+        /// <typeparam name="TResult">The type of the result.</typeparam>
+        /// <param name="query">The query.</param>
+        /// <returns>TResult</returns>
+        Task<TResult> GetResultAsync<TResult>(IQuery<TResult> query);
+
+        /// <summary>
         /// Dispatches the bus message asynchronously.
         /// </summary>
         /// <typeparam name="TMessage">The type of the message.</typeparam>
@@ -80,15 +74,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex
         /// The command handler must implement Kledex.Commands.ICommandHandler&lt;TCommand&gt;.
         /// </summary>
         /// <param name="command">The command.</param>
-        void Send<TCommand>(TCommand command)
-            where TCommand : ICommand;
-
-        /// <summary>Sends the specified command.</summary>
-        /// <param name="command">The command.</param>
-        /// <param name="commandHandler">The command handler.</param>
-        /// <returns></returns>
-        void Send<TCommand>(TCommand command, Func<CommandResponse> commandHandler)
-            where TCommand : ICommand;
+        void Send(ICommand command);
 
         /// <summary>
         /// Sends the specified command sequence.
@@ -104,13 +90,6 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex
         /// <param name="command">The command.</param>
         /// <returns>A custom object set as result in the command hadler response.</returns>
         TResult Send<TResult>(ICommand command);
-
-        /// <summary>Sends the specified command.</summary>
-        /// <typeparam name="TResult">The type of the result.</typeparam>
-        /// <param name="command">The command.</param>
-        /// <param name="commandHandler">The command handler.</param>
-        /// <returns></returns>
-        TResult Send<TResult>(ICommand command, Func<CommandResponse> commandHandler);
 
         /// <summary>
         /// Sends the sequence specified command sequence.
@@ -129,5 +108,14 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex
         /// <param name="event">The event.</param>
         void Publish<TEvent>(TEvent @event) 
             where TEvent : IEvent;
+
+        /// <summary>
+        /// Gets the result.
+        /// The query handler must implement Kledex.Queries.IQueryHandler&lt;TQuery, TResult&gt;.
+        /// </summary>
+        /// <typeparam name="TResult">The type of the result.</typeparam>
+        /// <param name="query">The query.</param>
+        /// <returns>TResult</returns>
+        TResult GetResult<TResult>(IQuery<TResult> query);
     }
 }

@@ -18,7 +18,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Extensions
         /// <param name="types">The types.</param>
         public static IKledexServiceBuilder AddKledex(this IServiceCollection services, params Type[] types)
         {
-            return AddKledex(services, opt => {}, types);
+            return AddKledex(services, opt => { }, types);
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Extensions
         /// <param name="services">The services.</param>
         /// <param name="setupAction">The options.</param>
         /// <param name="types">The types.</param>
-        public static IKledexServiceBuilder AddKledex(this IServiceCollection services, Action<MainOptions> setupAction, params Type[] types)
+        public static IKledexServiceBuilder AddKledex(this IServiceCollection services, Action<Options> setupAction, params Type[] types)
         {
             if (services == null)
                 throw new ArgumentNullException(nameof(services));
@@ -43,13 +43,27 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Extensions
                 .AddClasses()
                 .AsImplementedInterfaces());
 
-            services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient(typeof(IEventStoreRepository<>), typeof(EventStoreRepository<>));
 
             services.AddAutoMapper(typeList);
 
             services.Configure(setupAction);
 
             return new KledexServiceBuilder(services);
+        }
+
+        [Obsolete("Please use an override of AddKledex method.")]
+        public static IKledexServiceBuilder AddOptions(this IKledexServiceBuilder builder, Action<Options> setupAction)
+        {
+            if (builder == null)
+                throw new ArgumentNullException(nameof(builder));
+
+            if (setupAction == null)
+                throw new ArgumentNullException(nameof(setupAction));
+
+            builder.Services.Configure(setupAction);
+
+            return builder;
         }
     }
 }

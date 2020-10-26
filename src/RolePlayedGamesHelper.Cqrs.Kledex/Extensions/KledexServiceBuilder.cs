@@ -9,7 +9,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Extensions
 
         public KledexServiceBuilder(IServiceCollection services)
         {
-            Services = services ?? throw new ArgumentNullException(nameof(services));
+           Services = services ?? throw new ArgumentNullException(nameof(services));
         }
     }
 }

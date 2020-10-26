@@ -6,23 +6,18 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Validation
 {
     public interface IValidationProvider
     {
-        Task<ValidationResponse> ValidateAsync<TCommand>(TCommand command)
-            where TCommand : ICommand;
-
-        ValidationResponse Validate<TCommand>(TCommand command)
-            where TCommand : ICommand;
+        Task<ValidationResponse> ValidateAsync(ICommand command);
+        ValidationResponse Validate(ICommand command);
     }
 
     public class DefaultValidationProvider : IValidationProvider
     {
-        public Task<ValidationResponse> ValidateAsync<TCommand>(TCommand command)
-            where TCommand : ICommand
+        public Task<ValidationResponse> ValidateAsync(ICommand command)
         {
             throw new NotImplementedException(Consts.ValidationRequiredMessage);
         }
 
-        public ValidationResponse Validate<TCommand>(TCommand command)
-            where TCommand : ICommand
+        public ValidationResponse Validate(ICommand command)
         {
             throw new NotImplementedException(Consts.ValidationRequiredMessage);
         }

@@ -8,7 +8,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFi
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
 		local-build.ps1 = local-build.ps1
-		NuGet.Config = NuGet.Config
 		Nuget.Default.props = Nuget.Default.props
 		README.md = README.md
 	EndProjectSection
@@ -62,11 +61,39 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repos
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CQRS", "CQRS", "{5C80A77F-A055-4F73-868F-F9A06B06CA49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Cqrs.Kledex", "src\RolePlayedGamesHelper.Cqrs.Kledex\RolePlayedGamesHelper.Cqrs.Kledex.csproj", "{FD51D0D4-859C-4604-B712-5F1310789D65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Cqrs.Kledex", "src\RolePlayedGamesHelper.Cqrs.Kledex\RolePlayedGamesHelper.Cqrs.Kledex.csproj", "{FD51D0D4-859C-4604-B712-5F1310789D65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayedGamesHelper.Cqrs.Kledex.Validation.FluentValidation", "src\RolePlayedGamesHelper.Cqrs.Kledex.Validation.FluentValidation\RolePlayedGamesHelper.Cqrs.Kledex.Validation.FluentValidation.csproj", "{010EEF33-6693-4AB2-B795-9925A240C899}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Cqrs.Kledex.Validation.FluentValidation", "src\RolePlayedGamesHelper.Cqrs.Kledex.Validation.FluentValidation\RolePlayedGamesHelper.Cqrs.Kledex.Validation.FluentValidation.csproj", "{010EEF33-6693-4AB2-B795-9925A240C899}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Repository.InMemoryRepository", "src\RolePlayedGamesHelper.Repository.InMemoryRepository\RolePlayedGamesHelper.Repository.InMemoryRepository.csproj", "{E23B8187-1B1E-4970-BFDF-A0DA10A7E6C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Cqrs.Kledex.Bus.ServiceBus", "src\RolePlayedGamesHelper.Cqrs.Kledex.Bus.ServiceBus\RolePlayedGamesHelper.Cqrs.Kledex.Bus.ServiceBus.csproj", "{F0E97A6D-B333-4DD1-8D95-B8DD77C96288}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Cqrs.Kledex.Store.EF", "src\RolePlayedGamesHelper.Cqrs.Kledex.Store.EF\RolePlayedGamesHelper.Cqrs.Kledex.Store.EF.csproj", "{2B49799D-661C-4EBE-BFAD-647B781FDE63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Cqrs.Kledex.Store.RavenDb", "src\RolePlayedGamesHelper.Cqrs.Kledex.Store.RavenDb\RolePlayedGamesHelper.Cqrs.Kledex.Store.RavenDb.csproj", "{4655B58E-FCB1-4BA0-AA81-1584ED1F8C7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5A7D7820-A4BF-4910-8D13-771E9BCE62B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Cqrs.Kledex.UnitTests", "test\RolePlayedGamesHelper.Cqrs.Kledex.UnitTests\RolePlayedGamesHelper.Cqrs.Kledex.UnitTests.csproj", "{7F029025-A62D-4E10-9BFF-5DA7355B0DFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{86EF7165-67F1-4AC2-B483-197F48CAE653}"
+	ProjectSection(SolutionItems) = preProject
+		test\Directory.Build.props = test\Directory.Build.props
+		test\Directory.Build.targets = test\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Cqrs.EventSourcing", "src\RolePlayedGamesHelper.Cqrs.EventSourcing\RolePlayedGamesHelper.Cqrs.EventSourcing.csproj", "{3EEA57E2-0D9A-4451-B206-867EC2AB7FAC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Cqrs.ConsoleTest", "test\RolePlayedGamesHelper.Cqrs.ConsoleTest\RolePlayedGamesHelper.Cqrs.ConsoleTest.csproj", "{FB7FB763-7775-4554-9889-696584FF06BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GatalogService", "GatalogService", "{A367D794-1F33-4EF5-9150-94B5A5983054}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.GatalogService.Api", "src\Service\RolePlayedGamesHelper.GatalogService.Api\RolePlayedGamesHelper.GatalogService.Api.csproj", "{B21065C9-2CAE-418F-A346-692DA67A0D49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Seedwork", "Seedwork", "{0B6C0596-D864-42C5-9684-26CFE6EFCFDB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RolePlayedGamesHelper.Seedwork.Api", "src\RolePlayedGamesHelper.Seedwork.Api\RolePlayedGamesHelper.Seedwork.Api.csproj", "{F9B494CF-2479-477C-AF4E-B66AF41E7A80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -122,6 +149,38 @@ Global
 		{E23B8187-1B1E-4970-BFDF-A0DA10A7E6C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E23B8187-1B1E-4970-BFDF-A0DA10A7E6C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E23B8187-1B1E-4970-BFDF-A0DA10A7E6C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0E97A6D-B333-4DD1-8D95-B8DD77C96288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0E97A6D-B333-4DD1-8D95-B8DD77C96288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0E97A6D-B333-4DD1-8D95-B8DD77C96288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0E97A6D-B333-4DD1-8D95-B8DD77C96288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B49799D-661C-4EBE-BFAD-647B781FDE63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B49799D-661C-4EBE-BFAD-647B781FDE63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B49799D-661C-4EBE-BFAD-647B781FDE63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B49799D-661C-4EBE-BFAD-647B781FDE63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4655B58E-FCB1-4BA0-AA81-1584ED1F8C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4655B58E-FCB1-4BA0-AA81-1584ED1F8C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4655B58E-FCB1-4BA0-AA81-1584ED1F8C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4655B58E-FCB1-4BA0-AA81-1584ED1F8C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F029025-A62D-4E10-9BFF-5DA7355B0DFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F029025-A62D-4E10-9BFF-5DA7355B0DFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F029025-A62D-4E10-9BFF-5DA7355B0DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F029025-A62D-4E10-9BFF-5DA7355B0DFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EEA57E2-0D9A-4451-B206-867EC2AB7FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EEA57E2-0D9A-4451-B206-867EC2AB7FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EEA57E2-0D9A-4451-B206-867EC2AB7FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EEA57E2-0D9A-4451-B206-867EC2AB7FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB7FB763-7775-4554-9889-696584FF06BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB7FB763-7775-4554-9889-696584FF06BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB7FB763-7775-4554-9889-696584FF06BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB7FB763-7775-4554-9889-696584FF06BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B21065C9-2CAE-418F-A346-692DA67A0D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B21065C9-2CAE-418F-A346-692DA67A0D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B21065C9-2CAE-418F-A346-692DA67A0D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B21065C9-2CAE-418F-A346-692DA67A0D49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9B494CF-2479-477C-AF4E-B66AF41E7A80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B494CF-2479-477C-AF4E-B66AF41E7A80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B494CF-2479-477C-AF4E-B66AF41E7A80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B494CF-2479-477C-AF4E-B66AF41E7A80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,6 +202,16 @@ Global
 		{FD51D0D4-859C-4604-B712-5F1310789D65} = {5C80A77F-A055-4F73-868F-F9A06B06CA49}
 		{010EEF33-6693-4AB2-B795-9925A240C899} = {5C80A77F-A055-4F73-868F-F9A06B06CA49}
 		{E23B8187-1B1E-4970-BFDF-A0DA10A7E6C8} = {C32981A9-AB77-4343-A6CB-DAC109ED4E6F}
+		{F0E97A6D-B333-4DD1-8D95-B8DD77C96288} = {5C80A77F-A055-4F73-868F-F9A06B06CA49}
+		{2B49799D-661C-4EBE-BFAD-647B781FDE63} = {5C80A77F-A055-4F73-868F-F9A06B06CA49}
+		{4655B58E-FCB1-4BA0-AA81-1584ED1F8C7E} = {5C80A77F-A055-4F73-868F-F9A06B06CA49}
+		{5A7D7820-A4BF-4910-8D13-771E9BCE62B2} = {5C80A77F-A055-4F73-868F-F9A06B06CA49}
+		{7F029025-A62D-4E10-9BFF-5DA7355B0DFD} = {5A7D7820-A4BF-4910-8D13-771E9BCE62B2}
+		{86EF7165-67F1-4AC2-B483-197F48CAE653} = {E2590C73-0AD4-4F0A-B944-28812AAE5388}
+		{3EEA57E2-0D9A-4451-B206-867EC2AB7FAC} = {5C80A77F-A055-4F73-868F-F9A06B06CA49}
+		{FB7FB763-7775-4554-9889-696584FF06BB} = {5A7D7820-A4BF-4910-8D13-771E9BCE62B2}
+		{B21065C9-2CAE-418F-A346-692DA67A0D49} = {A367D794-1F33-4EF5-9150-94B5A5983054}
+		{F9B494CF-2479-477C-AF4E-B66AF41E7A80} = {0B6C0596-D864-42C5-9684-26CFE6EFCFDB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00F53228-D583-4063-881D-E60E058EDABC}

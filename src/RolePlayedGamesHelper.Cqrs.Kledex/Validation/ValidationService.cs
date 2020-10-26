@@ -17,8 +17,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Validation
         }
 
         /// <inheritdoc />
-        public async Task ValidateAsync<TCommand>(TCommand command)
-            where TCommand : ICommand
+        public async Task ValidateAsync(ICommand command)
         {
             if (command == null)
                 throw new ArgumentNullException(nameof(command));
@@ -30,8 +29,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Validation
         }
 
         /// <inheritdoc />
-        public void Validate<TCommand>(TCommand command)
-            where TCommand : ICommand
+        public void Validate(ICommand command)
         {
             if (command == null)
                 throw new ArgumentNullException(nameof(command));
