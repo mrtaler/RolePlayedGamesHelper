@@ -39,11 +39,11 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Store.RavenDb
 
 
            /* builder.Services
-                   .AddTransient<IRepositoryAsync<AggregateDocument, string>, EfCoreRepository<AggregateDocument, string>>();
+                   .AddTransient<IRepository<AggregateDocument, string>, EfCoreRepository<AggregateDocument, string>>();
             builder.Services
-                   .AddTransient<IRepositoryAsync<CommandDocument, string>, EfCoreRepository<CommandDocument, string>>();
+                   .AddTransient<IRepository<CommandDocument, string>, EfCoreRepository<CommandDocument, string>>();
             builder.Services
-                   .AddTransient<IRepositoryAsync<EventDocument, string>, EfCoreRepository<EventDocument, string>>();
+                   .AddTransient<IRepository<EventDocument, string>, EfCoreRepository<EventDocument, string>>();
 */
 
 

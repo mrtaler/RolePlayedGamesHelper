@@ -9,7 +9,7 @@ namespace RolePlayedGamesHelper.Seedwork.Api
   /// <inheritdoc />
   [ApiController]
   [Produces("application/json")]
-  public abstract class ApiController : ControllerBase
+  public abstract class CqrsApiController : ControllerBase
   {
     /// <summary>
     /// In process messaging service. Glue between layers of the application

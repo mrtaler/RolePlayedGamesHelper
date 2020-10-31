@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <UseFxCopAnalyzers>false</UseFxCopAnalyzers>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="RolePlayedGamesHelper.Cqrs.Kledex" Version="1.1.0-feature-develop.8" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RolePlayedGamesHelper.GatalogService.Domain\RolePlayedGamesHelper.GatalogService.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
