@@ -90,7 +90,7 @@ jobs:
       - name: Install dependencies
         run: |
           dotnet restore RolePlayedGamesHelper.sln
-          dotnet tool restore RolePlayedGamesHelper.sln
+          dotnet tool restore
       - name: Echo version
         run: echo $env:NUGET_VERSION
       - name: Build
