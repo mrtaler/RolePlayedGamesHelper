@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-feature-develop.10](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-feature-develop.9...v1.1.0-feature-develop.10) (2020-10-31)
+
+
+        ### Miscellaneous
+
+* Merge branch 'feature/CQRS' of github.com:mrtaler/RolePlayedGamesHelper into feature/CQRS ([71af059](https://github.com/mrtaler/RolePlayedGamesHelper/commit/71af05925370afc40311085223b7b38a58bdc212))
+
+        ### Bug Fixes
+
+* **seedwork:** change name for abstract controllrer ([64d38e0](https://github.com/mrtaler/RolePlayedGamesHelper/commit/64d38e02f8de4568943fa23db3a2dbcd697d40bd))
+
 # [1.1.0-feature-develop.9](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-feature-develop.8...v1.1.0-feature-develop.9) (2020-10-26)
 
 
