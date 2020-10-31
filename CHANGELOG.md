@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-feature-develop.11](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-feature-develop.10...v1.1.0-feature-develop.11) (2020-10-31)
+
+
+        ### Miscellaneous
+
+* Merge branch 'feature/CQRS' of github.com:mrtaler/RolePlayedGamesHelper into feature/CQRS ([aa44467](https://github.com/mrtaler/RolePlayedGamesHelper/commit/aa44467df70abef292bbff59eb6ea17806f728d9))
+
+        ### Bug Fixes
+
+* **sln:** removed services from helper SLN ([0c562cd](https://github.com/mrtaler/RolePlayedGamesHelper/commit/0c562cda9b0a1ed95a17342da9bd5a09d009f09d))
+
 # [1.1.0-feature-develop.10](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-feature-develop.9...v1.1.0-feature-develop.10) (2020-10-31)
 
 
