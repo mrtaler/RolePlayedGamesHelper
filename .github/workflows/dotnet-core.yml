@@ -89,16 +89,16 @@ jobs:
         run: docker exec -i mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'MyPassword!' -Q 'CREATE DATABASE Test'
       - name: Install dependencies
         run: |
-          dotnet restore 
-          dotnet tool restore
+          dotnet restore RolePlayedGamesHelper.sln
+          dotnet tool restore RolePlayedGamesHelper.sln
       - name: Echo version
         run: echo $env:NUGET_VERSION
       - name: Build
-        run: dotnet build  --configuration Release --no-restore /p:Version=${{needs.semantic-version.outputs.output2}}
+        run: dotnet build RolePlayedGamesHelper.sln --configuration Release --no-restore /p:Version=${{needs.semantic-version.outputs.output2}}
       - name: Test
         env:
           mssql: "Data Source=localhost,1433;Initial Catalog=Test;User=sa;Password=MyPassword!;"          
-        run: dotnet test --configuration Release --no-build --nologo --verbosity normal --collect:"XPlat Code Coverage"
+        run: dotnet test RolePlayedGamesHelper.sln --configuration Release --no-build --nologo --verbosity normal --collect:"XPlat Code Coverage"
       - uses: codecov/codecov-action@v1  
       #- name: Publish windows version        
       #  run: dotnet nuget push $GITHUB_WORKSPACE/Nugets/RolePlayedGamesHelper* --source "BoardGamesArtifacts" --api-key whatever --skip-duplicate
