@@ -1,5 +1,16 @@
 # Project Changelog
 
+# [1.1.0-feature-develop.14](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-feature-develop.13...v1.1.0-feature-develop.14) (2020-11-14)
+
+
+        ### Miscellaneous
+
+* Merge branch 'feature/CQRS' of github.com:mrtaler/RolePlayedGamesHelper into feature/CQRS ([623c8bd](https://github.com/mrtaler/RolePlayedGamesHelper/commit/623c8bdbfc5572fcdd7cd768595702f734f431ef))
+
+        ### Bug Fixes
+
+* **CQRS:** change event store init ([5747575](https://github.com/mrtaler/RolePlayedGamesHelper/commit/57475751cd22fe5d73faa9d81a01fcf23da65af4))
+
 # [1.1.0-feature-develop.13](https://github.com/mrtaler/RolePlayedGamesHelper/compare/v1.1.0-feature-develop.12...v1.1.0-feature-develop.13) (2020-10-31)
 
 
