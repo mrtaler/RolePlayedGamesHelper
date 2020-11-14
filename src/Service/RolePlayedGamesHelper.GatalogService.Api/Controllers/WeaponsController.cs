@@ -1,15 +1,16 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using RolePlayedGamesHelper.Cqrs.Kledex;
 using RolePlayedGamesHelper.GatalogService.Domain.Scaffold;
 using RolePlayedGamesHelper.GatalogService.Services.WeaponService.Queries;
 using RolePlayedGamesHelper.Repository.SharpRepository.FetchStrategies;
+using RolePlayedGamesHelper.Seedwork.Api;
+using RolePlayedGamesHelper.Seedwork.Api.ServiceDomain;
 
 namespace RolePlayedGamesHelper.GatalogService.Api.Controllers
 {
     /// <inheritdoc />
     [Route("weapon")]
-    public class WeaponsController : Seedwork.Api.ApiController
+    public class WeaponsController : CqrsApiController
   {
         /// <summary>
         /// GET api/values
@@ -27,8 +28,6 @@ namespace RolePlayedGamesHelper.GatalogService.Api.Controllers
                             {
                                 WeaponIncludes = new GenericFetchStrategy<Weapon>()
                             };
-            query.WeaponIncludes.Include(x => x.Item);
-            query.WeaponIncludes.Include(x => x.WeaponDamages);
             var result = await Dispatcher.GetResultAsync(query).ConfigureAwait(false);
             return Ok(result);
         }

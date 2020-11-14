@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using RolePlayedGamesHelper.Cqrs.Kledex.Domain;
-using RolePlayedGamesHelper.Cqrs.Kledex.Store.EF.Entities.Factories;
+using RolePlayedGamesHelper.Cqrs.Kledex.Entities.Factories;
 
 namespace RolePlayedGamesHelper.Cqrs.Kledex.Store.EF
 {

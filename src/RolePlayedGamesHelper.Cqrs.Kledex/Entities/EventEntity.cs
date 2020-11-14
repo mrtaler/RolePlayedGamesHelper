@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RolePlayedGamesHelper.Cqrs.Kledex.Store.EF.Entities
+namespace RolePlayedGamesHelper.Cqrs.Kledex.Entities
 {
     public class EventEntity
     {

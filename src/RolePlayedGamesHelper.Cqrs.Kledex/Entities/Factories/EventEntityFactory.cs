@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using RolePlayedGamesHelper.Cqrs.Kledex.Domain;
 
-namespace RolePlayedGamesHelper.Cqrs.Kledex.Store.EF.Entities.Factories
+namespace RolePlayedGamesHelper.Cqrs.Kledex.Entities.Factories
 {
     public class EventEntityFactory : IEventEntityFactory
     {

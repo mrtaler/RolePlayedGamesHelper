@@ -1,6 +1,6 @@
 ﻿using System.Text;
 using Microsoft.EntityFrameworkCore;
-using RolePlayedGamesHelper.Cqrs.Kledex.Store.EF.Entities;
+using RolePlayedGamesHelper.Cqrs.Kledex.Entities;
 
 namespace RolePlayedGamesHelper.Cqrs.Kledex.Store.EF
 {

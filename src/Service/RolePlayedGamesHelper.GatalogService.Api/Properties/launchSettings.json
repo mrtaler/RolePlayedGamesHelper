@@ -1,26 +1,23 @@
 ﻿{
   "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:63076",
-      "sslPort": 44305
+      "applicationUrl": "http://localhost:51488",
+      "sslPort": 0
     }
   },
   "profiles": {
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
     "RolePlayedGamesHelper.GatalogService.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AzureAccountDetails:AccountSid": "3500274f-449d-460c-b145-8a272e88c8e7",
+        "AzureAccountDetails:AuthToken": "FC98F7C2BF7AB501128661ED1B198AABC5546462",
+        "AzureAccountDetails:VaultAddress": "https://gurpsassistantkv.vault.azure.net/",
+        "AzureAccountDetails:IsCertificateUse": "true"
       }
     }
   }

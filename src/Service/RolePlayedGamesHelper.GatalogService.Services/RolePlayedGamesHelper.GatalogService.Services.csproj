@@ -3,7 +3,7 @@
     <UseFxCopAnalyzers>false</UseFxCopAnalyzers>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="RolePlayedGamesHelper.Cqrs.Kledex" Version="1.1.0-feature-develop.8" />
+    <PackageReference Include="RolePlayedGamesHelper.Cqrs.Kledex" Version="1.1.0-feature-develop.13" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RolePlayedGamesHelper.GatalogService.Domain\RolePlayedGamesHelper.GatalogService.Domain.csproj" />

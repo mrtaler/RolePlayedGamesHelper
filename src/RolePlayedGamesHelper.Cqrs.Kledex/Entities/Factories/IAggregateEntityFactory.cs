@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RolePlayedGamesHelper.Cqrs.Kledex.Store.EF.Entities.Factories
+namespace RolePlayedGamesHelper.Cqrs.Kledex.Entities.Factories
 {
     public interface IAggregateEntityFactory
     {

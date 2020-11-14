@@ -4,8 +4,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
-    <PackageReference Include="RolePlayedGamesHelper.Repository" Version="1.1.0-feature-develop.8" />
-    <PackageReference Include="RolePlayedGamesHelper.Repository.RavenDb" Version="1.1.0-feature-develop.8" />
+    <PackageReference Include="RolePlayedGamesHelper.Repository" Version="1.1.0-feature-develop.13" />
+    <PackageReference Include="RolePlayedGamesHelper.Repository.RavenDb" Version="1.1.0-feature-develop.13" />
 
   </ItemGroup>
 

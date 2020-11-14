@@ -8,7 +8,7 @@ namespace RolePlayedGamesHelper.Cqrs.Kledex.Store.RavenDb
 {
     public static class ServiceCollectionExtensions
     {
-        public static IKledexServiceBuilder AddRavenDbdataProvider(this IKledexServiceBuilder builder)
+        public static IKledexServiceBuilder AddRavenDbDataProvider(this IKledexServiceBuilder builder)
         {
             return AddRavenDbDataProvider(builder, opt => { });
         }

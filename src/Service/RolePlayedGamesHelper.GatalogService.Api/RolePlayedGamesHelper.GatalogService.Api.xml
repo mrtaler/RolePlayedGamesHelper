@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RolePlayedGamesHelper.GatalogService.Api</name>
+    </assembly>
+    <members>
+        <member name="T:RolePlayedGamesHelper.GatalogService.Api.Controllers.WeaponsController">
+            <inheritdoc />
+        </member>
+        <member name="M:RolePlayedGamesHelper.GatalogService.Api.Controllers.WeaponsController.GetAll">
+            <summary>
+            GET api/values
+            </summary>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/>.
+            </returns>
+        </member>
+        <member name="F:RolePlayedGamesHelper.GatalogService.Api.Startup.environment">
+            <summary>
+            The environment.
+            </summary>
+        </member>
+        <member name="F:RolePlayedGamesHelper.GatalogService.Api.Startup.configuration">
+            <summary>
+            The _configuration.
+            </summary>
+        </member>
+        <member name="M:RolePlayedGamesHelper.GatalogService.Api.Startup.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RolePlayedGamesHelper.GatalogService.Api.Startup"/> class.
+            </summary>
+            <param name="env">
+            The env.
+            </param>
+        </member>
+        <member name="T:RolePlayedGamesHelper.GatalogService.Api.SecurityRequirementsDocumentFilter">
+            <summary>
+            The security requirements document filter.
+            </summary>
+        </member>
+        <member name="M:RolePlayedGamesHelper.GatalogService.Api.SecurityRequirementsDocumentFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            The apply.
+            </summary>
+            <param name="swaggerDoc">
+            The swagger doc.
+            </param>
+            <param name="context">
+            The context.
+            </param>
+        </member>
+    </members>
+</doc>

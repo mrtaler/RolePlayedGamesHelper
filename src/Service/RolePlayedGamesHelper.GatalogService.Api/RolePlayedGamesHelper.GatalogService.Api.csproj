@@ -5,12 +5,22 @@
     <UseFxCopAnalyzers>false</UseFxCopAnalyzers>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\CD\GurpsProjects\RolePlayedGamesHelper\src\Service\RolePlayedGamesHelper.GatalogService.Api\RolePlayedGamesHelper.GatalogService.Api.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="RolePlayedGamesHelper.Seedwork.Api" Version="1.1.0-feature-develop.8" />
+    <PackageReference Include="RolePlayedGamesHelper.Cqrs.EventSourcing" Version="1.1.0-feature-develop.13" />
+    <PackageReference Include="RolePlayedGamesHelper.Cqrs.Kledex.Bus.ServiceBus" Version="1.1.0-feature-develop.13" />
+    <PackageReference Include="RolePlayedGamesHelper.Cqrs.Kledex.Store.RavenDb" Version="1.1.0-feature-develop.13" />
+    <PackageReference Include="RolePlayedGamesHelper.Cqrs.Kledex.Validation.FluentValidation" Version="1.1.0-feature-develop.13" />
+    <PackageReference Include="RolePlayedGamesHelper.Seedwork.Api" Version="1.1.0-feature-develop.13" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.9" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\RolePlayedGamesHelper.GatalogService.Services\RolePlayedGamesHelper.GatalogService.Services.csproj" />
+    <ProjectReference Include="..\RolePlayedGamesHelper.GatalogService.Services\RolePlayedGamesHelper.GatalogService.Services.csproj" />
   </ItemGroup>
 
 </Project>
